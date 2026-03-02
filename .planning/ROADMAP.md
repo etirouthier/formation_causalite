@@ -31,7 +31,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. La cellule d'assertions passe sans exception : `p_visite ∈ [0.01, 0.99]` pour toutes les lignes, overlap suffisant dans les scénarios de sélection
   4. Les dossiers `figures/` et `data/` sont créés automatiquement au démarrage
   5. Tous les paramètres numériques sont dans la cellule Paramètres sous forme de constantes ALL_CAPS — aucun magic number dans les cellules de génération
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Notebook skeleton : cellule Paramètres (ALL_CAPS) + cellule Imports (rng, mkdir)
+- [ ] 01-02-PLAN.md — DGP + validation : generate_base_panel, compute_outcomes, assertions, DAG pattern
 
 ### Phase 2: Scénario 0 — Biais de petits nombres
 **Goal**: Le formateur peut illustrer visuellement que les petits magasins dominent les extrêmes de distribution du panier moyen en raison de la variance binomiale
@@ -93,7 +97,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fondations | 0/TBD | Not started | - |
+| 1. Fondations | 0/2 | Not started | - |
 | 2. Scénario 0 — Biais de petits nombres | 0/TBD | Not started | - |
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 0/TBD | Not started | - |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 0/TBD | Not started | - |
