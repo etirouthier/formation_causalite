@@ -75,38 +75,36 @@
 
 ## Traceability
 
-*Populated during roadmap creation.*
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | — | Pending |
-| INFRA-02 | — | Pending |
-| INFRA-03 | — | Pending |
-| INFRA-04 | — | Pending |
-| DGP-01 | — | Pending |
-| DGP-02 | — | Pending |
-| DGP-03 | — | Pending |
-| DGP-04 | — | Pending |
-| DGP-05 | — | Pending |
-| DGP-06 | — | Pending |
-| SC0-01 | — | Pending |
-| SC0-02 | — | Pending |
-| SC0-03 | — | Pending |
-| SC1-01 | — | Pending |
-| SC1-02 | — | Pending |
-| SC1-03 | — | Pending |
-| SC2-01 | — | Pending |
-| SC2-02 | — | Pending |
-| SC2-03 | — | Pending |
-| SC3-01 | — | Pending |
-| SC3-02 | — | Pending |
-| SC3-03 | — | Pending |
+| INFRA-01 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Pending |
+| INFRA-04 | Phase 1 | Pending |
+| DGP-01 | Phase 1 | Pending |
+| DGP-02 | Phase 1 | Pending |
+| DGP-03 | Phase 1 | Pending |
+| DGP-04 | Phase 1 | Pending |
+| DGP-05 | Phase 1 | Pending |
+| DGP-06 | Phase 1 | Pending |
+| SC0-01 | Phase 2 | Pending |
+| SC0-02 | Phase 2 | Pending |
+| SC0-03 | Phase 2 | Pending |
+| SC1-01 | Phase 3 | Pending |
+| SC1-02 | Phase 3 | Pending |
+| SC1-03 | Phase 3 | Pending |
+| SC2-01 | Phase 4 | Pending |
+| SC2-02 | Phase 4 | Pending |
+| SC2-03 | Phase 4 | Pending |
+| SC3-01 | Phase 5 | Pending |
+| SC3-02 | Phase 5 | Pending |
+| SC3-03 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 22 total
-- Mapped to phases: 0
-- Unmapped: 22 ⚠️
+- Mapped to phases: 22
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-02*
-*Last updated: 2026-03-02 after initial definition*
+*Last updated: 2026-03-02 after roadmap creation*
