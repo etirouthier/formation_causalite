@@ -35,7 +35,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md — Notebook skeleton : cellule Paramètres (ALL_CAPS) + cellule Imports (rng, mkdir)
-- [ ] 01-02-PLAN.md — DGP + validation : generate_base_panel, compute_outcomes, assertions, DAG pattern
+- [x] 01-02-PLAN.md — DGP + validation : generate_base_panel, compute_outcomes, assertions, DAG pattern
 
 ### Phase 2: Scénario 0 — Biais de petits nombres
 **Goal**: Le formateur peut illustrer visuellement que les petits magasins dominent les extrêmes de distribution du panier moyen en raison de la variance binomiale
@@ -97,7 +97,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fondations | 1/2 | In progress | - |
+| 1. Fondations | 2/2 | Complete (checkpoint) | 2026-03-03 |
 | 2. Scénario 0 — Biais de petits nombres | 0/TBD | Not started | - |
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 0/TBD | Not started | - |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 0/TBD | Not started | - |

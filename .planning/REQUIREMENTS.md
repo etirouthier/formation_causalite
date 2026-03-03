@@ -9,19 +9,19 @@
 
 ### Infrastructure
 
-- [ ] **INFRA-01**: Le formateur peut modifier tous les paramètres de simulation depuis une cellule unique en tête de notebook (constantes ALL_CAPS, aucun magic number ailleurs)
-- [ ] **INFRA-02**: Le notebook produit des résultats identiques à chaque exécution `Restart & Run All` via `numpy.random.default_rng(SEED)`
-- [ ] **INFRA-03**: Une cellule d'assertions valide que les paramètres sont cohérents (`p_visite ∈ [0,1]`, overlap suffisant dans les scénarios de sélection, effet vrai identique entre scénarios)
-- [ ] **INFRA-04**: Toutes les figures sont automatiquement exportées en PNG vers `figures/` et tous les datasets en CSV vers `data/` lors de l'exécution du notebook
+- [x] **INFRA-01**: Le formateur peut modifier tous les paramètres de simulation depuis une cellule unique en tête de notebook (constantes ALL_CAPS, aucun magic number ailleurs)
+- [x] **INFRA-02**: Le notebook produit des résultats identiques à chaque exécution `Restart & Run All` via `numpy.random.default_rng(SEED)`
+- [x] **INFRA-03**: Une cellule d'assertions valide que les paramètres sont cohérents (`p_visite ∈ [0,1]`, overlap suffisant dans les scénarios de sélection, effet vrai identique entre scénarios)
+- [x] **INFRA-04**: Toutes les figures sont automatiquement exportées en PNG vers `figures/` et tous les datasets en CSV vers `data/` lors de l'exécution du notebook
 
 ### Générateur de données (DGP)
 
-- [ ] **DGP-01**: Un générateur de panel partagé `generate_base_panel(params, rng)` produit le DataFrame N_magasins × T_mois utilisé par tous les scénarios
-- [ ] **DGP-02**: Chaque magasin est caractérisé par : `taille` (petit/moyen/grand, détermine N_potentiel), `urbain` (binaire, effet additif sur p_visite), `qualite_equipe` (binaire, effet additif sur p_visite)
-- [ ] **DGP-03**: La variable mensuelle `saison` produit un effet additif paramétrable sur `p_visite`
-- [ ] **DGP-04**: Le traitement `pub` est binaire par magasin × mois, avec un mécanisme de sélection probabiliste paramétrable (`P(pub=1 | caractéristique)`)
-- [ ] **DGP-05**: L'effet vrai de la pub est : +10% sur `p_visite` (nombre de visiteurs) ET +10% sur `μ_panier` (panier moyen), toutes deux paramétrables ; effet homogène entre magasins
-- [ ] **DGP-06**: Les DAGs causaux sont dessinés programmatiquement via `networkx.DiGraph` avec un layout de nœuds fixe et déterministe (pas de spring_layout)
+- [x] **DGP-01**: Un générateur de panel partagé `generate_base_panel(params, rng)` produit le DataFrame N_magasins × T_mois utilisé par tous les scénarios
+- [x] **DGP-02**: Chaque magasin est caractérisé par : `taille` (petit/moyen/grand, détermine N_potentiel), `urbain` (binaire, effet additif sur p_visite), `qualite_equipe` (binaire, effet additif sur p_visite)
+- [x] **DGP-03**: La variable mensuelle `saison` produit un effet additif paramétrable sur `p_visite`
+- [x] **DGP-04**: Le traitement `pub` est binaire par magasin × mois, avec un mécanisme de sélection probabiliste paramétrable (`P(pub=1 | caractéristique)`)
+- [x] **DGP-05**: L'effet vrai de la pub est : +10% sur `p_visite` (nombre de visiteurs) ET +10% sur `μ_panier` (panier moyen), toutes deux paramétrables ; effet homogène entre magasins
+- [x] **DGP-06**: Les DAGs causaux sont dessinés programmatiquement via `networkx.DiGraph` avec un layout de nœuds fixe et déterministe (pas de spring_layout)
 
 ### Scénario 0 — Biais de petits nombres
 
@@ -77,16 +77,16 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
-| INFRA-04 | Phase 1 | Pending |
-| DGP-01 | Phase 1 | Pending |
-| DGP-02 | Phase 1 | Pending |
-| DGP-03 | Phase 1 | Pending |
-| DGP-04 | Phase 1 | Pending |
-| DGP-05 | Phase 1 | Pending |
-| DGP-06 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete (01-01) |
+| INFRA-02 | Phase 1 | Complete (01-01) |
+| INFRA-03 | Phase 1 | Complete (01-02) |
+| INFRA-04 | Phase 1 | Complete (01-01) |
+| DGP-01 | Phase 1 | Complete (01-02) |
+| DGP-02 | Phase 1 | Complete (01-02) |
+| DGP-03 | Phase 1 | Complete (01-02) |
+| DGP-04 | Phase 1 | Complete (01-02) |
+| DGP-05 | Phase 1 | Complete (01-02) |
+| DGP-06 | Phase 1 | Complete (01-02) |
 | SC0-01 | Phase 2 | Pending |
 | SC0-02 | Phase 2 | Pending |
 | SC0-03 | Phase 2 | Pending |
@@ -107,4 +107,4 @@
 
 ---
 *Requirements defined: 2026-03-02*
-*Last updated: 2026-03-02 after roadmap creation*
+*Last updated: 2026-03-03 after plan 01-02 completion — INFRA-01/02/03/04 and DGP-01/02/03/04/05/06 marked complete*
