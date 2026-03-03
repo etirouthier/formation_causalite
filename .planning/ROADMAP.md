@@ -34,7 +34,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Notebook skeleton : cellule Paramètres (ALL_CAPS) + cellule Imports (rng, mkdir)
+- [x] 01-01-PLAN.md — Notebook skeleton : cellule Paramètres (ALL_CAPS) + cellule Imports (rng, mkdir)
 - [ ] 01-02-PLAN.md — DGP + validation : generate_base_panel, compute_outcomes, assertions, DAG pattern
 
 ### Phase 2: Scénario 0 — Biais de petits nombres
@@ -97,7 +97,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fondations | 0/2 | Not started | - |
+| 1. Fondations | 1/2 | In progress | - |
 | 2. Scénario 0 — Biais de petits nombres | 0/TBD | Not started | - |
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 0/TBD | Not started | - |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 0/TBD | Not started | - |
