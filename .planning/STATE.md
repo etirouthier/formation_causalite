@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-02)
 ## Current Position
 
 Phase: 2 of 6 (Scénario 0 — Biais de petits nombres)
-Plan: 2 of TBD in current phase (02-02 complete — awaiting checkpoint human-verify)
-Status: In progress — checkpoint human-verify pending
-Last activity: 2026-03-03 — Plan 02-02 completed (code-sc0-fig3 + code-sc0-fig4 insérées, sc0_top10.png + sc0_loi_grands_nombres.png exportés, nbconvert exit 0)
+Plan: 2 of TBD in current phase (02-02 COMPLETE — checkpoint human-verify APPROVED)
+Status: In progress — Plan 02-02 fully complete, ready for next plan in phase 02
+Last activity: 2026-03-03 — Plan 02-02 checkpoint approved (titres corrigés commit c90fc36, 4 figures validées visuellement par le formateur)
 
 Progress: [████░░░░░░] 25%
 
@@ -66,5 +66,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Plan 02-02 — checkpoint human-verify pending — code-sc0-fig3 + code-sc0-fig4 insérées, 4 PNG exportés (sc0_top10.png 10/10 petits), nbconvert exit 0
+Stopped at: Plan 02-02 COMPLETE — checkpoint human-verify APPROVED — 4 figures validées, titres corrigés (c90fc36), scénario 0 entièrement livré
 Resume file: None

@@ -43,7 +43,7 @@ patterns-established:
 requirements-completed: [SC0-03]
 
 # Metrics
-duration: 5min
+duration: 8min
 completed: 2026-03-03
 ---
 
@@ -53,11 +53,11 @@ completed: 2026-03-03
 
 ## Performance
 
-- **Duration:** 5 min
+- **Duration:** 8 min
 - **Started:** 2026-03-03T18:12:46Z
-- **Completed:** 2026-03-03T18:15:00Z
-- **Tasks:** 2 (+ 1 checkpoint human-verify)
-- **Files modified:** 1 notebook + 2 PNG exports
+- **Completed:** 2026-03-03T18:41:00Z
+- **Tasks:** 2 auto + 1 checkpoint human-verify (APPROVED)
+- **Files modified:** 1 notebook + 2 PNG exports + 1 titre fix commit
 
 ## Accomplishments
 - code-sc0-fig3 : bar chart des 10 magasins avec `panier_moyen_moy` le plus élevé, barres colorées par taille via `colors_sc0`
@@ -92,6 +92,8 @@ Each task was committed atomically:
 
 1. **Task 1: Insérer Figure 3 (top 10 bar chart) et Figure 4 (loi des grands nombres)** - `f51419c` (feat)
 2. **Task 2: Exécuter le notebook et vérifier les 4 exports** - `f0bcc3f` (feat)
+3. **Task 3: Checkpoint humain — Validation visuelle des 4 figures** - APPROVED
+   - Correctif post-checkpoint: `c90fc36` (fix) — titres figures sc0 rendus factuels (suppressions des commentaires interprétatifs), notebook ré-exécuté
 
 **Plan metadata:** (docs commit — voir ci-dessous)
 
@@ -107,12 +109,16 @@ Sortie : `[NbConvertApp] Writing 333457 bytes to /tmp/test_phase2_complete.ipynb
 
 ## Checkpoint Humain
 
-**Statut : EN ATTENTE** — Le formateur doit valider visuellement les 4 figures du scénario 0.
+**Statut : APPROUVE** — Le formateur a validé visuellement les 4 figures du scénario 0 (2026-03-03).
 
-Points de contrôle visuels :
+Suite à la validation, un correctif a été appliqué :
+- Les titres des figures contenaient des commentaires interprétatifs — supprimés pour rendre les titres purement factuels
+- Commit correctif : `c90fc36` — notebook ré-exécuté avec succès après modification
+
+Points de contrôle visuels validés :
 1. `sc0_distribution.png` : 3 panneaux empilés, axe X partagé, distribution "petit" plus large que "grand"
 2. `sc0_scatter.png` : nuage avec tendance négative, points rouges (petits) en haut à gauche
-3. `sc0_top10.png` : barres majoritairement rouges (petits), titre "analyste naïf", légende présente
+3. `sc0_top10.png` : barres majoritairement rouges (petits), titre factuel, légende présente
 4. `sc0_loi_grands_nombres.png` : rang 1 KDE grise réelle, rang 2 5 courbes dont N=100000 la plus étroite
 
 ## Decisions Made
@@ -142,7 +148,7 @@ None — no external service configuration required.
 ## Next Phase Readiness
 - Scénario 0 complet — 6 cellules sc0 insérées, 4 PNG et 1 CSV exportés, nbconvert exit 0
 - Pattern `rng_fig4` local établi — réutilisable pour les simulations des scénarios suivants (SEED + offset unique par figure)
-- Validation visuelle du formateur requise avant passage au scénario suivant
+- Validation visuelle du formateur APPROUVEE (2026-03-03) — passage au scénario suivant possible
 
 ---
 *Phase: 02-scenario0-petits-nombres*
@@ -150,9 +156,14 @@ None — no external service configuration required.
 
 ## Self-Check: PASSED
 
-- FOUND: figures/sc0_top10.png
-- FOUND: figures/sc0_loi_grands_nombres.png
+- FOUND: figures/sc0_top10.png (41 KB)
+- FOUND: figures/sc0_loi_grands_nombres.png (100 KB)
+- FOUND: figures/sc0_distribution.png (81 KB)
+- FOUND: figures/sc0_scatter.png (84 KB)
+- FOUND: data/sc0_biais_petits_nombres.csv (13 KB, 200 magasins)
 - FOUND: formation_causalite.ipynb (16 cellules, code-sc0-fig3 et code-sc0-fig4 présentes)
 - FOUND: 02-02-SUMMARY.md
 - FOUND: commit f51419c (Task 1 — insertion cellules)
 - FOUND: commit f0bcc3f (Task 2 — exports PNG)
+- FOUND: commit c90fc36 (fix post-checkpoint — titres factuels, notebook ré-exécuté)
+- Checkpoint human-verify: APPROVED by formateur 2026-03-03

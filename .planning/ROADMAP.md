@@ -46,7 +46,7 @@ Plans:
   2. Le scatter plot montre une corrélation négative visible entre `nb_visites` et la variance du `panier_moyen`
   3. Le bar chart des top 10 magasins révèle la sur-représentation des petits magasins (idéalement ≥ 50% du top 10)
   4. Le dataset du scénario est exporté en CSV dans `data/`
-**Plans**: 2 plans (02-01 complete, 02-02 complete — checkpoint human-verify pending)
+**Plans**: 2 plans (02-01 complete, 02-02 complete — checkpoint human-verify APPROVED)
 
 Plans:
 - [x] 02-01-PLAN.md — Agrégation agg_sc0 + export CSV + Figure 1 (distribution) + Figure 2 (scatter variance)
@@ -102,7 +102,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Fondations | 2/2 | Complete (checkpoint) | 2026-03-03 |
-| 2. Scénario 0 — Biais de petits nombres | 2/2 | Checkpoint pending | - |
+| 2. Scénario 0 — Biais de petits nombres | 2/2 | Complete | 2026-03-03 |
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 0/TBD | Not started | - |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 0/TBD | Not started | - |
 | 5. Scénario 3 — Surcontrôle sur un collider | 0/TBD | Not started | - |
