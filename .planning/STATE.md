@@ -10,25 +10,25 @@ See: .planning/PROJECT.md (updated 2026-03-02)
 ## Current Position
 
 Phase: 2 of 6 (Scénario 0 — Biais de petits nombres)
-Plan: 1 of TBD in current phase (02-01 complete)
-Status: In progress
-Last activity: 2026-03-03 — Plan 02-01 completed (4 cellules sc0 insérées, CSV et 2 PNG exportés)
+Plan: 2 of TBD in current phase (02-02 complete — awaiting checkpoint human-verify)
+Status: In progress — checkpoint human-verify pending
+Last activity: 2026-03-03 — Plan 02-02 completed (code-sc0-fig3 + code-sc0-fig4 insérées, sc0_top10.png + sc0_loi_grands_nombres.png exportés, nbconvert exit 0)
 
-Progress: [███░░░░░░░] 20%
+Progress: [████░░░░░░] 25%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 5 min
-- Total execution time: 15 min
+- Total execution time: 20 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-fondations | 2/2 | 10 min | 5 min |
-| 02-scenario0-petits-nombres | 1/TBD | 5 min | 5 min |
+| 02-scenario0-petits-nombres | 2/TBD | 10 min | 5 min |
 
 **Recent Trend:**
 - Last 5 plans: 3 min, 7 min, 5 min
@@ -51,6 +51,8 @@ Recent decisions affecting current work:
 - [01-02]: Mapping effet_saison cyclique via ((mois-1)%12)+1 — T_MOIS=24 nécessite répétition du cycle annuel sur les 12 clés de EFFET_SAISON
 - [02-01]: groupby(['magasin_id','taille']) avec les deux colonnes — 'taille' obligatoire pour survivre au reset_index()
 - [02-01]: colors_sc0 dict défini une fois dans code-sc0-fig1, réutilisé dans fig2 et les figures du plan 02-02
+- [02-02]: rng_fig4 = np.random.default_rng(SEED + 4) local dans code-sc0-fig4 — isole les simulations Figure 4 du rng global pour garantir la reproductibilité des scénarios 1-3
+- [02-02]: warn_singular=False dans sns.kdeplot obligatoire pour N=100000 (std ≈ 0.018, courbe absente silencieusement sinon)
 
 ### Pending Todos
 
@@ -64,5 +66,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Plan 02-01 complete — 4 cellules sc0 insérées, agg_sc0 (200 lignes, corr=-0.758), CSV et PNG exportés, nbconvert exit 0
+Stopped at: Plan 02-02 — checkpoint human-verify pending — code-sc0-fig3 + code-sc0-fig4 insérées, 4 PNG exportés (sc0_top10.png 10/10 petits), nbconvert exit 0
 Resume file: None
