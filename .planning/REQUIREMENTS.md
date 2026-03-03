@@ -25,8 +25,8 @@
 
 ### Scénario 0 — Biais de petits nombres
 
-- [ ] **SC0-01**: Figure montrant la distribution du `panier_moyen` par taille de magasin (histogramme ou violin plot avec `hue=taille`)
-- [ ] **SC0-02**: Scatter plot montrant la relation entre `nb_visites` et la variance du `panier_moyen` par magasin (petits magasins = plus de variance)
+- [x] **SC0-01**: Figure montrant la distribution du `panier_moyen` par taille de magasin (histogramme ou violin plot avec `hue=taille`)
+- [x] **SC0-02**: Scatter plot montrant la relation entre `nb_visites` et la variance du `panier_moyen` par magasin (petits magasins = plus de variance)
 - [ ] **SC0-03**: Bar chart ou tableau des top 10 magasins par `panier_moyen` le plus élevé, avec la répartition par taille de magasin (illustre la sur-représentation des petits magasins)
 
 ### Scénario 1 — Biais de sélection
@@ -87,8 +87,8 @@
 | DGP-04 | Phase 1 | Complete (01-02) |
 | DGP-05 | Phase 1 | Complete (01-02) |
 | DGP-06 | Phase 1 | Complete (01-02) |
-| SC0-01 | Phase 2 | Pending |
-| SC0-02 | Phase 2 | Pending |
+| SC0-01 | Phase 2 | Complete (02-01) |
+| SC0-02 | Phase 2 | Complete (02-01) |
 | SC0-03 | Phase 2 | Pending |
 | SC1-01 | Phase 3 | Pending |
 | SC1-02 | Phase 3 | Pending |
@@ -107,4 +107,4 @@
 
 ---
 *Requirements defined: 2026-03-02*
-*Last updated: 2026-03-03 after plan 01-02 completion — INFRA-01/02/03/04 and DGP-01/02/03/04/05/06 marked complete*
+*Last updated: 2026-03-03 after plan 02-01 completion — SC0-01, SC0-02 marked complete*
