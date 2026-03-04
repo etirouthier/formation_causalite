@@ -91,7 +91,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 05-01-PLAN.md — COLLIDER_PUB_VENTES_COEFF dans PARAMS + 5 cellules sc3 (DAG V-structure + coefficient plot + bar chart) + CSV export
+- [x] 05-01-PLAN.md — COLLIDER_PUB_VENTES_COEFF dans PARAMS + 5 cellules sc3 (DAG V-structure + coefficient plot + bar chart) + CSV export
 
 ### Phase 6: Validation bout-en-bout
 **Goal**: Le notebook est propre, complet, et prêt à l'emploi — le formateur peut le distribuer ou l'exécuter sans modification
@@ -115,5 +115,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Scénario 0 — Biais de petits nombres | 2/2 | Complete | 2026-03-03 |
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 2/2 | Complete | 2026-03-04 |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 1/1 | Complete | 2026-03-04 |
-| 5. Scénario 3 — Surcontrôle sur un collider | 0/1 | Not started | - |
+| 5. Scénario 3 — Surcontrôle sur un collider | 1/1 | Complete | 2026-03-04 |
 | 6. Validation bout-en-bout | 0/TBD | Not started | - |

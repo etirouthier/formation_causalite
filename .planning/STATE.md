@@ -6,9 +6,9 @@ status: in_progress
 last_updated: "2026-03-04T14:00:00Z"
 progress:
   total_phases: 6
-  completed_phases: 4
-  total_plans: 8
-  completed_plans: 7
+  completed_phases: 5
+  total_plans: 9
+  completed_plans: 8
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-02)
 
 ## Current Position
 
-Phase: 4 of 6 (Scénario 2 — Surcontrôle sur un médiateur)
-Plan: 1 of 1 in current phase (Phase 4 COMPLETE — scénario 2 médiateur, 3 PNG + 1 CSV, biais surcontrôle validé)
-Status: Phase 4 complete — ready to start Phase 5
-Last activity: 2026-03-04 — Plan 04-01 COMPLETE — scénario 2 validé, OLS sans méd 30.8% > OLS avec méd 21.1% (-9.7pp)
+Phase: 5 of 6 (Scénario 3 — Surcontrôle sur un collider)
+Plan: 1 of 1 in current phase (Phase 5 COMPLETE — scénario 3 collider, 3 PNG + 1 CSV, biais collider validé)
+Status: Phase 5 complete — ready to start Phase 6
+Last activity: 2026-03-04 — Plan 05-01 COMPLETE — scénario 3 validé, OLS naïf 33.6% > OLS avec collider 30.5% (-3.1pp, 9.4%)
 
-Progress: [██████░░░░] 60%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -74,6 +74,9 @@ Recent decisions affecting current work:
 - [04-01]: OLS sans médiateur est le modèle CORRECT en sc2 — inversion pédagogique vs Phase 3 (naïf=correct ici). model_naive_sc2 = sans médiateur, model_med_sc2 = biaisé.
 - [04-01]: Pas de C(mois) dans les formules OLS sc2 — assignation aléatoire, saison n'est pas un confondant.
 - [04-01]: Seeds isolés SEED+40 (données sc2) et SEED+41 (contrefactuel sc2) — convention +10*phase maintenue.
+- [05-01]: OLS naïf (sans collider) est le modèle CORRECT en sc3 — assignation aléatoire, même inversion pédagogique qu'en Phase 4.
+- [05-01]: Couleur collider = crimson (rouge) pour distinction visuelle forte vs médiateur (bleu sc2). DAG inclut Pub→Ventes pour structure causale complète.
+- [05-01]: Biais direction downward (naive 33.6% > avec-collider 30.5%) — 9.4% relatif. Proximité fortuite ATT (30.2%) ≈ avec-collider commentée explicitement.
 
 ### Pending Todos
 
@@ -82,11 +85,11 @@ None yet.
 ### Blockers/Concerns
 
 - [Phase 1 - RESOLVED]: Calibration validée empiriquement avec SEED=42 — P_BASE_VISITE=0.25, N_PETIT=30, N_MOYEN=150, N_GRAND=500 : 0 zéros, ratio_variance=4.4x
-- [Phase 5]: alpha_collider pour `posts_reseaux` est non trivial — nécessite des essais pour garantir la visibilité du biais (≥5% de différence)
+- [Phase 5 - RESOLVED]: alpha_collider = 5e-5 — biais 9.4% relatif (> seuil 5%). 113/200 traités. nbconvert exit 0.
 - [Phase 3 - RESOLVED]: Direction du biais pédagogique corrigée via refactoring DV log_rev_int + EFFET_EQUIPE/URBAIN=0.20 + EFFET_SAISON max 0.08. OLS naïf > ATT_log confirmé pour 1a (+70%), 1b (+55%), 1c (+8.6pp). Blocker résolu.
 
 ## Session Continuity
 
 Last session: 2026-03-04
-Stopped at: Plan 04-01 COMPLETE — Phase 4 entière validée. Scénario 2: OLS sans méd 30.8% > OLS avec méd 21.1% (-9.7pp). 3 PNG + 1 CSV produits. nbconvert exit 0. Prochaine étape: Phase 5 — Scénario 3 collider.
+Stopped at: Plan 05-01 COMPLETE — Phase 5 entière validée. Scénario 3: OLS naïf 33.6% > OLS avec collider 30.5% (-3.1pp, 9.4%). 3 PNG + 1 CSV produits. nbconvert exit 0. Prochaine étape: Phase 6 — Validation bout-en-bout.
 Resume file: None
