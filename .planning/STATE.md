@@ -6,9 +6,9 @@ status: in_progress
 last_updated: "2026-03-04T13:15:00Z"
 progress:
   total_phases: 6
-  completed_phases: 2
-  total_plans: 6
-  completed_plans: 5
+  completed_phases: 3
+  total_plans: 7
+  completed_plans: 6
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-02)
 
 **Core value:** Permettre au formateur d'illustrer quatre biais causaux classiques avec des données reproductibles, tous construits sur le même modèle cohérent
-**Current focus:** Phase 3 — Scénarios 1a/1b/1c — Biais de sélection
+**Current focus:** Phase 4 — Scénario 2 — Surcontrôle sur un médiateur
 
 ## Current Position
 
-Phase: 3 of 6 (Scénarios 1a/1b/1c — Biais de sélection)
-Plan: 1 of TBD in current phase (03-01 COMPLETE — refactoring DV ventes→log_rev_int, 10 cellules modifiées, artifacts régénérés)
-Status: In progress — Plan 03-01 refactoring complet, 03-02 à reprendre (sc1c checkpoint pending)
-Last activity: 2026-03-04 — Plan 03-01 refactoring DV log_rev_int pour 1a/1b/1c (EFFET_SAISON recalibré, surestimation validée, commit afee35f)
+Phase: 4 of 6 (Scénario 2 — Surcontrôle sur un médiateur)
+Plan: 0 of TBD in current phase (Phase 3 COMPLETE — 1a/1b/1c DV log_rev_int, 9 PNG + 3 CSV, surestimation validée)
+Status: Ready to start Phase 4
+Last activity: 2026-03-04 — Plan 03-02 COMPLETE — scénario 1c validé, phase 3 complète (OLS naïf > ATT pour 1a/1b/1c)
 
-Progress: [█████░░░░░] 40%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -70,6 +70,7 @@ Recent decisions affecting current work:
 - [03-01]: colors_est redéfini dans code-sc1b-coeff (pas dépendant de code-sc1a-bar) — robustesse réexécution partielle
 - [03-01]: Direction biais DGP inversée pour 1a et 1b (OLS naïf sous-estime ATT, non surestime) — EFFET_EQUIPE=0.02 et EFFET_URBAIN=0.03 trop faibles vs variance taille ; décision de recalibration à prendre par le formateur
 - [03-01 REFACTORING]: DV = log(ventes/n_potentiel) — mesure intensive, supprime l'effet de taille, interprétation en log-points ≈ % uplift. EFFET_SAISON max 0.08 (vs 0.02). Surestimation validée: 1a +70%, 1b +55%, 1c +8.6pp (SEED=42)
+- [03-02]: Checkpoint human-verify sc1c superseded par demande architecturale du formateur (PAUSE.md). Assignation niveau ligne (pas magasin) pour sc1c. OLS naïf sans C(mois) est l'exception structurelle voulue pour rendre le biais saisonnier visible.
 
 ### Pending Todos
 
@@ -84,5 +85,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-04
-Stopped at: Plan 03-01 REFACTORING COMPLETE — DV log_rev_int, 10 cellules modifiées, surestimation validée (commit afee35f). Prochaine étape: plan 03-02 checkpoint human-verify (figures sc1c à valider).
+Stopped at: Plan 03-02 COMPLETE — Phase 3 entière validée. Scénario 1c: OLS naïf 38.0% > ATT 29.4% (+8.6pp). 9 PNG + 3 CSV produits. nbconvert exit 0. Prochaine étape: Phase 4 — Scénario 2 médiateur.
 Resume file: None
