@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: "2026-03-04T13:15:00Z"
+last_updated: "2026-03-04T14:00:00Z"
 progress:
   total_phases: 6
-  completed_phases: 3
-  total_plans: 7
-  completed_plans: 6
+  completed_phases: 4
+  total_plans: 8
+  completed_plans: 7
 ---
 
 # Project State
@@ -18,7 +18,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-02)
 
 **Core value:** Permettre au formateur d'illustrer quatre biais causaux classiques avec des données reproductibles, tous construits sur le même modèle cohérent
-**Current focus:** Phase 4 — Scénario 2 — Surcontrôle sur un médiateur
+**Current focus:** Phase 5 — Scénario 3 — Surcontrôle sur un collider
 
 ## Current Position
 
