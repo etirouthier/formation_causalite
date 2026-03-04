@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-02)
 ## Current Position
 
 Phase: 4 of 6 (Scénario 2 — Surcontrôle sur un médiateur)
-Plan: 0 of TBD in current phase (Phase 3 COMPLETE — 1a/1b/1c DV log_rev_int, 9 PNG + 3 CSV, surestimation validée)
-Status: Ready to start Phase 4
-Last activity: 2026-03-04 — Plan 03-02 COMPLETE — scénario 1c validé, phase 3 complète (OLS naïf > ATT pour 1a/1b/1c)
+Plan: 1 of 1 in current phase (Phase 4 COMPLETE — scénario 2 médiateur, 3 PNG + 1 CSV, biais surcontrôle validé)
+Status: Phase 4 complete — ready to start Phase 5
+Last activity: 2026-03-04 — Plan 04-01 COMPLETE — scénario 2 validé, OLS sans méd 30.8% > OLS avec méd 21.1% (-9.7pp)
 
-Progress: [█████░░░░░] 50%
+Progress: [██████░░░░] 60%
 
 ## Performance Metrics
 
@@ -71,6 +71,9 @@ Recent decisions affecting current work:
 - [03-01]: Direction biais DGP inversée pour 1a et 1b (OLS naïf sous-estime ATT, non surestime) — EFFET_EQUIPE=0.02 et EFFET_URBAIN=0.03 trop faibles vs variance taille ; décision de recalibration à prendre par le formateur
 - [03-01 REFACTORING]: DV = log(ventes/n_potentiel) — mesure intensive, supprime l'effet de taille, interprétation en log-points ≈ % uplift. EFFET_SAISON max 0.08 (vs 0.02). Surestimation validée: 1a +70%, 1b +55%, 1c +8.6pp (SEED=42)
 - [03-02]: Checkpoint human-verify sc1c superseded par demande architecturale du formateur (PAUSE.md). Assignation niveau ligne (pas magasin) pour sc1c. OLS naïf sans C(mois) est l'exception structurelle voulue pour rendre le biais saisonnier visible.
+- [04-01]: OLS sans médiateur est le modèle CORRECT en sc2 — inversion pédagogique vs Phase 3 (naïf=correct ici). model_naive_sc2 = sans médiateur, model_med_sc2 = biaisé.
+- [04-01]: Pas de C(mois) dans les formules OLS sc2 — assignation aléatoire, saison n'est pas un confondant.
+- [04-01]: Seeds isolés SEED+40 (données sc2) et SEED+41 (contrefactuel sc2) — convention +10*phase maintenue.
 
 ### Pending Todos
 
@@ -85,5 +88,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-04
-Stopped at: Plan 03-02 COMPLETE — Phase 3 entière validée. Scénario 1c: OLS naïf 38.0% > ATT 29.4% (+8.6pp). 9 PNG + 3 CSV produits. nbconvert exit 0. Prochaine étape: Phase 4 — Scénario 2 médiateur.
+Stopped at: Plan 04-01 COMPLETE — Phase 4 entière validée. Scénario 2: OLS sans méd 30.8% > OLS avec méd 21.1% (-9.7pp). 3 PNG + 1 CSV produits. nbconvert exit 0. Prochaine étape: Phase 5 — Scénario 3 collider.
 Resume file: None

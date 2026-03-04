@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 1: Fondations** - Notebook squelette avec cellule Paramètres, seed, assertions, dossiers d'export, et `generate_base_panel()` validé
 - [ ] **Phase 2: Scénario 0 — Biais de petits nombres** - Figures de distribution du `panier_moyen` par taille de magasin + exports PNG/CSV
 - [x] **Phase 3: Scénarios 1a/1b/1c — Biais de sélection** - DAGs networkx, comparaisons naïf vs ajusté avec IC 95%, exports
-- [ ] **Phase 4: Scénario 2 — Surcontrôle sur un médiateur** - Visualisation du changement de coefficient OLS lors de l'ajout du médiateur
+- [x] **Phase 4: Scénario 2 — Surcontrôle sur un médiateur** - Visualisation du changement de coefficient OLS lors de l'ajout du médiateur
 - [ ] **Phase 5: Scénario 3 — Surcontrôle sur un collider** - Variable `posts_reseaux` comme collider, comparaison OLS avec vs sans collider
 - [ ] **Phase 6: Validation bout-en-bout** - Notebook propre, `Restart & Run All` sans erreur, zero magic number hors cellule Paramètres
 
@@ -78,7 +78,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 04-01-PLAN.md — Données + ATT + OLS (sans/avec médiateur) + DAG + coefficient plot + bar chart + CSV export
+- [x] 04-01-PLAN.md — Données + ATT + OLS (sans/avec médiateur) + DAG + coefficient plot + bar chart + CSV export
 
 ### Phase 5: Scénario 3 — Surcontrôle sur un collider
 **Goal**: Le formateur peut montrer que contrôler sur `posts_reseaux` introduit un biais là où l'estimation naïve était correcte, parce que `posts_reseaux` est un collider
@@ -111,6 +111,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 1. Fondations | 2/2 | Complete (checkpoint) | 2026-03-03 |
 | 2. Scénario 0 — Biais de petits nombres | 2/2 | Complete | 2026-03-03 |
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 2/2 | Complete | 2026-03-04 |
-| 4. Scénario 2 — Surcontrôle sur un médiateur | 0/1 | Not started | - |
+| 4. Scénario 2 — Surcontrôle sur un médiateur | 1/1 | Complete | 2026-03-04 |
 | 5. Scénario 3 — Surcontrôle sur un collider | 0/TBD | Not started | - |
 | 6. Validation bout-en-bout | 0/TBD | Not started | - |

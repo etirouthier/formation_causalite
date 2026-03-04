@@ -37,9 +37,9 @@
 
 ### Scénario 2 — Surcontrôle sur un médiateur
 
-- [ ] **SC2-01**: DAG causal illustrant les deux chemins (`pub → nb_visites → ventes` ET `pub → panier_moyen → ventes`)
-- [ ] **SC2-02**: Coefficient plot montrant comment le coefficient `pub` change quand on ajoute `panier_moyen` comme variable de contrôle (OLS sans médiateur vs OLS avec médiateur)
-- [ ] **SC2-03**: Bar chart comparant : effet estimé sans contrôle (correct) vs effet estimé avec contrôle sur médiateur (biaisé) vs valeur vraie
+- [x] **SC2-01**: DAG causal illustrant les deux chemins (`pub → nb_visites → ventes` ET `pub → panier_moyen → ventes`)
+- [x] **SC2-02**: Coefficient plot montrant comment le coefficient `pub` change quand on ajoute `panier_moyen` comme variable de contrôle (OLS sans médiateur vs OLS avec médiateur)
+- [x] **SC2-03**: Bar chart comparant : effet estimé sans contrôle (correct) vs effet estimé avec contrôle sur médiateur (biaisé) vs valeur vraie
 
 ### Scénario 3 — Surcontrôle sur un collider
 
@@ -93,9 +93,9 @@
 | SC1-01 | Phase 3 | Complete (03-01) |
 | SC1-02 | Phase 3 | Complete (03-01) |
 | SC1-03 | Phase 3 | Complete (03-02) |
-| SC2-01 | Phase 4 | Pending |
-| SC2-02 | Phase 4 | Pending |
-| SC2-03 | Phase 4 | Pending |
+| SC2-01 | Phase 4 | Complete (04-01) |
+| SC2-02 | Phase 4 | Complete (04-01) |
+| SC2-03 | Phase 4 | Complete (04-01) |
 | SC3-01 | Phase 5 | Pending |
 | SC3-02 | Phase 5 | Pending |
 | SC3-03 | Phase 5 | Pending |
