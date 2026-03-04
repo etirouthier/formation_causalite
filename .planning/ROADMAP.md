@@ -61,7 +61,11 @@ Plans:
   2. Le coefficient naïf est systématiquement plus élevé que la valeur vraie ; l'estimateur ajusté converge vers la valeur vraie (dans l'IC 95%)
   3. Les trois comparaisons (naïf vs ajusté vs vrai) sont affichées sur un graphique lisible par taille pour slides
   4. Les trois datasets (un par sous-scénario) sont exportés en CSV dans `data/`
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Scénarios 1a (qualite_equipe) et 1b (urbain) : données + DAG + coefficient plot + bar chart
+- [ ] 03-02-PLAN.md — Scénario 1c (saison) : données + DAG + coefficient plot + bar chart + validation checkpoint
 
 ### Phase 4: Scénario 2 — Surcontrôle sur un médiateur
 **Goal**: Le formateur peut montrer que contrôler sur `panier_moyen` dans la régression biaise le coefficient de `pub` vers zéro car `panier_moyen` est un médiateur
@@ -103,7 +107,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Fondations | 2/2 | Complete (checkpoint) | 2026-03-03 |
 | 2. Scénario 0 — Biais de petits nombres | 2/2 | Complete | 2026-03-03 |
-| 3. Scénarios 1a/1b/1c — Biais de sélection | 0/TBD | Not started | - |
+| 3. Scénarios 1a/1b/1c — Biais de sélection | 0/2 | Not started | - |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 0/TBD | Not started | - |
 | 5. Scénario 3 — Surcontrôle sur un collider | 0/TBD | Not started | - |
 | 6. Validation bout-en-bout | 0/TBD | Not started | - |
