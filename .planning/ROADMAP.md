@@ -96,13 +96,16 @@ Plans:
 ### Phase 6: Validation bout-en-bout
 **Goal**: Le notebook est propre, complet, et prêt à l'emploi — le formateur peut le distribuer ou l'exécuter sans modification
 **Depends on**: Phase 5
-**Requirements**: (cross-cutting — validation de toutes les phases précédentes)
+**Requirements**: INFRA-01, INFRA-02, INFRA-03, INFRA-04 (cross-cutting — validation finale de toutes les phases)
 **Success Criteria** (what must be TRUE):
   1. `Restart & Run All` s'exécute de bout en bout sans erreur ni warning bloquant
   2. Tous les fichiers PNG attendus sont présents dans `figures/` et tous les CSV dans `data/` après exécution
   3. Aucun magic number n'existe hors de la cellule Paramètres (revue manuelle du code)
-  4. L'effet vrai est identique entre tous les scénarios (même valeur de `EFFET_PUB_VISITE` et `EFFET_PUB_PANIER` utilisée partout)
-**Plans**: TBD
+  4. L'effet vrai est identique entre tous les scénarios (même valeur de `EFFET_PUB_VISITES` et `EFFET_PUB_PANIER` utilisée partout)
+**Plans**: 1 plan
+
+Plans:
+- [ ] 06-01-PLAN.md — P_PUB_ALEATOIRE dans PARAMS + correction sc2/sc3 + cellule validation finale + nbconvert exit 0
 
 ## Progress
 
@@ -116,4 +119,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 2/2 | Complete | 2026-03-04 |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 1/1 | Complete | 2026-03-04 |
 | 5. Scénario 3 — Surcontrôle sur un collider | 1/1 | Complete | 2026-03-04 |
-| 6. Validation bout-en-bout | 0/TBD | Not started | - |
+| 6. Validation bout-en-bout | 0/1 | Not started | - |
