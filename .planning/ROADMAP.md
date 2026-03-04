@@ -88,7 +88,10 @@ Plans:
   1. Le DAG causal illustre le collider (`pub → posts_reseaux ← ventes`) et rend visible le chemin non causal ouvert par le contrôle
   2. L'estimation sans contrôle sur `posts_reseaux` est proche de la valeur vraie ; l'estimation avec contrôle en diffère d'au moins 5% (biais visible)
   3. Le bar chart de comparaison (naïf / sur-contrôlé / vrai) rend le biais pédagogiquement lisible
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 05-01-PLAN.md — COLLIDER_PUB_VENTES_COEFF dans PARAMS + 5 cellules sc3 (DAG V-structure + coefficient plot + bar chart) + CSV export
 
 ### Phase 6: Validation bout-en-bout
 **Goal**: Le notebook est propre, complet, et prêt à l'emploi — le formateur peut le distribuer ou l'exécuter sans modification
@@ -112,5 +115,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Scénario 0 — Biais de petits nombres | 2/2 | Complete | 2026-03-03 |
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 2/2 | Complete | 2026-03-04 |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 1/1 | Complete | 2026-03-04 |
-| 5. Scénario 3 — Surcontrôle sur un collider | 0/TBD | Not started | - |
+| 5. Scénario 3 — Surcontrôle sur un collider | 0/1 | Not started | - |
 | 6. Validation bout-en-bout | 0/TBD | Not started | - |
