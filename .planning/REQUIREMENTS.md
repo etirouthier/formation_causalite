@@ -33,7 +33,7 @@
 
 - [x] **SC1-01**: Scénario 1a (sélection par qualité d'équipe) : DAG causal + coefficient plot (OLS naïf vs OLS ajusté vs valeur vraie avec IC 95%) + bar chart comparant effet naïf/ajusté/vrai
 - [x] **SC1-02**: Scénario 1b (sélection par localisation urbain/rural) : DAG causal + coefficient plot + bar chart comparant effet naïf/ajusté/vrai
-- [ ] **SC1-03**: Scénario 1c (sélection par saison) : DAG causal + coefficient plot + bar chart comparant effet naïf/ajusté/vrai
+- [x] **SC1-03**: Scénario 1c (sélection par saison) : DAG causal + coefficient plot + bar chart comparant effet naïf/ajusté/vrai
 
 ### Scénario 2 — Surcontrôle sur un médiateur
 
@@ -90,9 +90,9 @@
 | SC0-01 | Phase 2 | Complete (02-01) |
 | SC0-02 | Phase 2 | Complete (02-01) |
 | SC0-03 | Phase 2 | Complete (02-02) |
-| SC1-01 | Phase 3 | Pending |
-| SC1-02 | Phase 3 | Pending |
-| SC1-03 | Phase 3 | Pending |
+| SC1-01 | Phase 3 | Complete (03-01) |
+| SC1-02 | Phase 3 | Complete (03-01) |
+| SC1-03 | Phase 3 | Complete (03-02) |
 | SC2-01 | Phase 4 | Pending |
 | SC2-02 | Phase 4 | Pending |
 | SC2-03 | Phase 4 | Pending |

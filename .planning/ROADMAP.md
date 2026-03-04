@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Fondations** - Notebook squelette avec cellule Paramètres, seed, assertions, dossiers d'export, et `generate_base_panel()` validé
 - [ ] **Phase 2: Scénario 0 — Biais de petits nombres** - Figures de distribution du `panier_moyen` par taille de magasin + exports PNG/CSV
-- [ ] **Phase 3: Scénarios 1a/1b/1c — Biais de sélection** - DAGs networkx, comparaisons naïf vs ajusté avec IC 95%, exports
+- [x] **Phase 3: Scénarios 1a/1b/1c — Biais de sélection** - DAGs networkx, comparaisons naïf vs ajusté avec IC 95%, exports
 - [ ] **Phase 4: Scénario 2 — Surcontrôle sur un médiateur** - Visualisation du changement de coefficient OLS lors de l'ajout du médiateur
 - [ ] **Phase 5: Scénario 3 — Surcontrôle sur un collider** - Variable `posts_reseaux` comme collider, comparaison OLS avec vs sans collider
 - [ ] **Phase 6: Validation bout-en-bout** - Notebook propre, `Restart & Run All` sans erreur, zero magic number hors cellule Paramètres
