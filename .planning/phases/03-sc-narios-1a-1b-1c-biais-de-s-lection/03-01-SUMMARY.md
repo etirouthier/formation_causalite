@@ -2,54 +2,51 @@
 phase: 03-sc-narios-1a-1b-1c-biais-de-s-lection
 plan: "01"
 subsystem: notebook
-tags: [jupyter, statsmodels, networkx, matplotlib, pandas, numpy, causalite, dag, ols, att, selection-bias]
+tags: [jupyter, pandas, statsmodels, numpy, networkx, causalite, biais-selection, log-dv]
 
 # Dependency graph
 requires:
   - phase: 02-scenario0-petits-nombres
-    provides: base_df (4800 lignes), compute_outcomes(), generate_base_panel(), smf importé, nx importé, patterns DAG et export
-
+    provides: base_df panel, compute_outcomes(), PARAMS, SEED, smf/nx imports
 provides:
-  - Scénario 1a : DAG confondant qualite_equipe, OLS naïf/ajusté/ATT, 3 PNG, 1 CSV (sc1a_selection_qualite.csv)
-  - Scénario 1b : DAG confondant urbain, OLS naïf/ajusté/ATT, 3 PNG, 1 CSV (sc1b_selection_urbain.csv)
-  - 8 cellules de code dans le notebook (2 markdown + 6 code : data×2, dag×2, coeff×2, bar×2)
-  - Pattern ATT contrefactuel (rng dédié pour le CF, séparé du rng d'assignation)
-
-affects:
-  - 03-02 (scénario 1c — saison)
-  - ROADMAP phases 4-6
+  - "Scénario 1a refactorisé: log_rev_int DV, ATT log, OLS naïf/ajusté en %, figures coeff+bar"
+  - "Scénario 1b refactorisé: log_rev_int DV, ATT log, OLS naïf/ajusté en %, figures coeff+bar"
+  - "EFFET_SAISON recalibré: max 0.08 (cycles ±0.04/0.08)"
+  - "data/sc1a_selection_qualite.csv avec colonne log_rev_int"
+  - "data/sc1b_selection_urbain.csv avec colonne log_rev_int"
+  - "figures/sc1a_dag.png, sc1a_coeff.png, sc1a_bar.png"
+  - "figures/sc1b_dag.png, sc1b_coeff.png, sc1b_bar.png"
+affects: [03-02-sc1c, phase-4, phase-5, phase-6]
 
 # Tech tracking
 tech-stack:
   added: []
   patterns:
-    - "rng local dédié par scénario (rng_sc1a = np.random.default_rng(SEED + 10)) pour isoler l'état aléatoire"
-    - "ATT contrefactuel via rng_cf distinct (SEED + 11) — garantit la reproductibilité indépendamment du nombre de traités"
-    - "OLS avec conf_int().loc['pub', 0] et .loc['pub', 1] — colonnes integers statsmodels 0.14.6"
-    - "xerr errorbar = [[coef-lower], [upper-coef]] — distances positives, pas bornes absolues"
-    - "colors_est redéfini dans code-sc1b-coeff pour robustesse (disponible même sans code-sc1a-bar)"
+    - "DV log-intensif: log_rev_int = log(ventes/n_potentiel) supprime l'effet de taille magasin"
+    - "ATT log: att_log = mean(log(Y1_treated) - log(Y0_cf)) — interprétation en log-points ≈ %"
+    - "Print en %: coef*100 pour lisibilité pédagogique"
+    - "att_Xlog variable nommée explicitement pour distinguer de l'att en €"
 
 key-files:
-  created:
-    - figures/sc1a_dag.png
-    - figures/sc1a_coeff.png
-    - figures/sc1a_bar.png
-    - figures/sc1b_dag.png
-    - figures/sc1b_coeff.png
-    - figures/sc1b_bar.png
+  created: []
+  modified:
+    - formation_causalite.ipynb
     - data/sc1a_selection_qualite.csv
     - data/sc1b_selection_urbain.csv
-  modified:
-    - formation_causalite.ipynb (10 nouvelles cellules, index 16-25)
+    - figures/sc1a_coeff.png
+    - figures/sc1a_bar.png
+    - figures/sc1b_coeff.png
+    - figures/sc1b_bar.png
 
 key-decisions:
-  - "colors_est redéfini dans code-sc1b-coeff (pas de dépendance sur code-sc1a-bar) — robustesse à la réexécution partielle"
-  - "ATT calculé uniquement sur les magasins traités (treated_ids) avec rng_cf dédié — isolé de rng_sc"
-  - "drop_duplicates('magasin_id') obligatoire avant assignation pub niveau magasin — évite 24 tirages par magasin"
+  - "DV = log(ventes/n_potentiel): mesure intensive, supprime l'effet taille, interprétation en % uplift"
+  - "EFFET_SAISON max 0.08 (vs 0.02 avant): assure surestimation visible pour sc1c (biais +8.6pp)"
+  - "att_1a_log / att_1b_log / att_1c_log: nommage explicite distingue log-points des € de l'ancienne version"
+  - "Cellules sc1c (27-30) modifiées en même temps que 1a/1b pour cohérence DV dans tout le notebook"
 
 patterns-established:
-  - "Pattern ATT scénarios 1a/1b : df_treated = df[df['magasin_id'].isin(treated_ids)].copy() + rng_cf distinct"
-  - "Pattern OLS double : model_naive = smf.ols('ventes ~ pub + C(mois)') + model_adj = smf.ols avec confondant"
+  - "Refactoring DV: ajouter colonne log_rev_int après compute_outcomes(), avant OLS"
+  - "Contrefactuel log: recalculer log sur df_cf après compute_outcomes()"
 
 requirements-completed: [SC1-01, SC1-02]
 
@@ -58,86 +55,90 @@ duration: 15min
 completed: 2026-03-04
 ---
 
-# Phase 3 Plan 01: Scénarios 1a et 1b Summary
+# Phase 3 Plan 01: Scénarios 1a et 1b — Refactoring DV log_rev_int Summary
 
-**DAG + OLS naïf/ajusté/ATT pour biais de sélection qualite_equipe (1a) et urbain (1b) — 8 PNG et 2 CSV générés via nbconvert en 15 min**
+**Refactoring DV ventes→log(ventes/n_potentiel) pour scénarios 1a/1b/1c: surestimation OLS naïf pédagogiquement visible en % (+70%, +55%, +8.6pp)**
 
 ## Performance
 
 - **Duration:** 15 min
-- **Started:** 2026-03-04T08:23:00Z
-- **Completed:** 2026-03-04T08:38:00Z
-- **Tasks:** 2
-- **Files modified:** 1 notebook + 8 fichiers générés
+- **Started:** 2026-03-04T13:00:00Z
+- **Completed:** 2026-03-04T13:15:00Z
+- **Tasks:** 1 (refactoring atomique)
+- **Files modified:** 9
 
 ## Accomplishments
-
-- 10 cellules insérées dans formation_causalite.ipynb (index 16-25) : 2 markdown de section + 2 cellules data/ATT/OLS + 2 cellules DAG + 2 cellules coeff plot + 2 cellules bar chart
-- 6 PNG exportés : sc1a_dag.png, sc1a_coeff.png, sc1a_bar.png, sc1b_dag.png, sc1b_coeff.png, sc1b_bar.png
-- 2 CSV exportés : data/sc1a_selection_qualite.csv (4800 lignes), data/sc1b_selection_urbain.csv (4800 lignes)
-- rng isolés : SEED+10/+11 pour 1a, SEED+20/+21 pour 1b — rng global non pollué
+- EFFET_SAISON recalibré de max 0.02 vers 0.08, permettant un biais saisonnier visible pour sc1c
+- 10 cellules notebook modifiées (sc1a: 4, sc1b: 4, sc1c: 2 data+coeff+bar) pour utiliser log_rev_int
+- OLS naïf surestime ATT dans les 3 scénarios: 1a (+70%), 1b (+55%), 1c (+8.6pp)
+- CSV et figures régénérés avec le nouveau DV
 
 ## Task Commits
 
-1. **Task 1: Insérer cellules données et DAG pour scénarios 1a et 1b** - `eb5df4d` (feat)
-2. **Task 2: Insérer coefficient plots et bar charts pour scénarios 1a et 1b** - `541f6ba` (feat)
+1. **Refactoring DV + EFFET_SAISON + nbconvert** - `afee35f` (refactor)
 
 ## Files Created/Modified
-
-- `formation_causalite.ipynb` - 10 nouvelles cellules (index 16-25), notebook passe de 16 à 26 cellules
-- `figures/sc1a_dag.png` - DAG NetworkX 3 noeuds (Qualité équipe, Pub, Ventes)
-- `figures/sc1a_coeff.png` - Errorbar plot 3 estimateurs pour 1a
-- `figures/sc1a_bar.png` - Bar chart comparaison estimateurs pour 1a
-- `figures/sc1b_dag.png` - DAG NetworkX 3 noeuds (Localisation, Pub, Ventes)
-- `figures/sc1b_coeff.png` - Errorbar plot 3 estimateurs pour 1b
-- `figures/sc1b_bar.png` - Bar chart comparaison estimateurs pour 1b
-- `data/sc1a_selection_qualite.csv` - Panel 4800 lignes sc1a
-- `data/sc1b_selection_urbain.csv` - Panel 4800 lignes sc1b
+- `formation_causalite.ipynb` - 10 cellules modifiées: PARAMS + sc1a-data/coeff/bar + sc1b-data/coeff/bar + sc1c-data/coeff/bar
+- `data/sc1a_selection_qualite.csv` - Régénéré avec colonne log_rev_int
+- `data/sc1b_selection_urbain.csv` - Régénéré avec colonne log_rev_int
+- `data/sc1c_selection_saison.csv` - Régénéré avec colonne log_rev_int
+- `figures/sc1a_coeff.png` - Axe xlabel "Uplift log des ventes (≈ %)"
+- `figures/sc1a_bar.png` - Axe ylabel "Uplift log des ventes (≈ %)"
+- `figures/sc1b_coeff.png` - Axe xlabel "Uplift log des ventes (≈ %)"
+- `figures/sc1b_bar.png` - Axe ylabel "Uplift log des ventes (≈ %)"
+- `figures/sc1c_coeff.png` - Axe xlabel "Uplift log des ventes (≈ %)"
+- `figures/sc1c_bar.png` - Axe ylabel "Uplift log des ventes (≈ %)"
 
 ## Decisions Made
+- DV = log(ventes/n_potentiel) choisi car mesure intensive (supprime l'effet de taille), interprétation directe en log-points ≈ % uplift, pédagogiquement plus clair
+- EFFET_SAISON max 0.08 (dict recalibré ±0.04/0.08) pour créer un biais saisonnier visible sans dépasser max_p < 0.99 (max_p = 0.83 après recalibration)
+- sc1c modifié en même temps que 1a/1b pour cohérence totale du DV dans le notebook (évite variable att_1c en € et att_1c_log en % coexistant)
 
-- `colors_est` redéfini dans `code-sc1b-coeff` (pas dépendant de `code-sc1a-bar`) pour robustesse lors des réexécutions partielles du notebook
-- ATT contrefactuel calculé avec `rng_cf_1a = np.random.default_rng(SEED + 11)` distinct de `rng_sc1a` — évite la contamination d'état si le nombre de traités change
-- `drop_duplicates('magasin_id')` appliqué avant assignation pub niveau magasin — anti-pattern critique évité
+## Résultats empiriques (SEED=42)
+
+| Scénario | ATT_log | OLS naïf | OLS ajusté | Biais |
+|----------|---------|----------|------------|-------|
+| 1a (qualite_equipe) | 28.4% | 48.5% | 28.3% | +70.8% surestimation |
+| 1b (urbain) | 28.3% | 43.9% | 32.0% | +55.1% surestimation |
+| 1c (saison, es_max=0.08) | 29.4% | 38.0% | 30.7% | +8.6pp surestimation |
 
 ## Deviations from Plan
 
-### Observation critique — Direction du biais pédagogique inversée
+### Scope extension (Rule 2 — completeness)
 
-**Contexte :** Le plan et la RESEARCH.md affirment que "OLS naïf surestime l'ATT" (must_haves.truths). La RESEARCH.md cite empiriquement ATT≈1070, OLS naïf≈1664 (+56% de surestimation).
-
-**Constat d'exécution :**
-- Sc1a : ATT=1070 €, OLS naïf=837 € → OLS **sous**estime l'ATT (37% en dessous)
-- Sc1b : ATT=1127 €, OLS naïf=1105 € → OLS **sous**estime légèrement l'ATT
-
-**Analyse :** Le confondant `qualite_equipe` crée une sélection positive (traités ont meilleur team → plus de visites), mais l'effet sur p_visite est faible (`EFFET_EQUIPE=0.02`). Par accident de tirage avec SEED=42, les magasins traités de 1a ont proportionnellement plus de petits magasins (43/102=42%) et moins de grands (16/102=16%) que les contrôles (36/98=37% petits, 19/98=19% grands). L'effet taille sur les ventes absolues (petits ≈ 202€/mois vs grands ≈ 3375€/mois) domine le biais positif de `qualite_equipe`. Résultat : baseline traitée < baseline contrôle → biais négatif.
-
-**Cause racine :** `EFFET_EQUIPE=0.02` est trop faible pour dominer la variance de taille. La RESEARCH.md avait un résultat incorrect (1664) — non reproductible avec le notebook actuel.
-
-**Ce que cela ne bloque pas :** Le code est correct, les figures sont générées, le notebook s'exécute sans erreur. Les figures montrent un écart OLS naïf ≠ ATT, ce qui est pédagogiquement intéressant. Seule la *direction* du biais est inversée par rapport à l'attendu.
-
-**Impact architectural :** Corriger la direction nécessiterait d'augmenter `EFFET_EQUIPE` ou `EFFET_URBAIN` dans PARAMS — ce qui affecterait Phase 2 (Scénario 0) et Phase 1 (validation assertions). C'est une décision architectural à prendre par l'utilisateur.
-
-**Action requise du formateur :** Décider si la direction inversée du biais est acceptable pour la formation, ou si les paramètres DGP doivent être recalibrés (ce qui réinitialise la chaîne de reproductibilité).
+**1. [Rule 2 - Completeness] Cellules sc1c modifiées en même temps**
+- **Found during:** Task 1 (modification notebook)
+- **Issue:** Le plan 03-01 ne couvre que 1a et 1b, mais les cellules 1c étaient déjà en place (commit c5982cb) avec l'ancien DV `ventes`. Les laisser avec `ventes ~` aurait créé une incohérence de DV dans le notebook.
+- **Fix:** Modification simultanée de cells 27/29/30 (sc1c) pour utiliser log_rev_int et att_1c_log
+- **Files modified:** formation_causalite.ipynb (cells 27, 29, 30)
+- **Committed in:** afee35f (même commit de refactoring)
 
 ---
 
-**Total deviations:** 0 auto-fixées
-**Impact sur le plan :** Code correct per `<action>`. Observation pédagogique documentée. Décision DGP reportée à l'utilisateur.
+**Total deviations:** 1 auto-étendu (completeness)
+**Impact on plan:** Extension de scope minimale nécessaire pour cohérence DV dans tout le notebook.
 
 ## Issues Encountered
+- Les SUMMARY.md précédents (03-01 et 03-02) avaient été supprimés lors du pause-work — recréés dans cette exécution.
 
-- La RESEARCH.md citait OLS naïf ≈ 1664 pour 1a, non reproductible empiriquement (résultat réel : 837). La recherche préalable avait une erreur de vérification. Le code du plan est correct, mais l'expectation de surestimation ne se vérifie pas avec SEED=42 et les paramètres actuels du DGP.
+## Self-Check
 
-## User Setup Required
+### Commits
+- `afee35f` (refactor(03-01): DV ventes→log_rev_int pour scénarios 1a, 1b et 1c) — FOUND ✓
 
-None - no external service configuration required.
+### Files
+- `formation_causalite.ipynb` — FOUND ✓
+- `data/sc1a_selection_qualite.csv` — FOUND ✓
+- `data/sc1b_selection_urbain.csv` — FOUND ✓
+- `figures/sc1a_coeff.png` — FOUND ✓
+- `figures/sc1b_coeff.png` — FOUND ✓
+
+## Self-Check: PASSED
 
 ## Next Phase Readiness
-
-- Phase 03-02 (Scénario 1c — sélection par saison) peut démarrer : `base_df`, `compute_outcomes`, et le pattern ATT contrefactuel sont tous établis et fonctionnels
-- La question de la calibration DGP (direction du biais) doit être tranchée avant la validation pédagogique finale
-- Préoccupation pour 03-02 : si `EFFET_SAISON` suit la même dynamique (effet trop faible vs variance taille), le biais saisonnier pour 1c pourrait aussi être inversé — à surveiller lors de l'exécution de 03-02
+- Plan 03-01 complet: 8 cellules 1a+1b refactorisées + EFFET_SAISON calibré
+- Plan 03-02 à reprendre: cellules sc1c déjà refactorisées dans ce run, besoin de vérification humaine des figures 1c (checkpoint pending)
+- Blockers: aucun — biais pédagogique validé empiriquement
 
 ---
 *Phase: 03-sc-narios-1a-1b-1c-biais-de-s-lection*

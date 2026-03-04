@@ -107,7 +107,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Fondations | 2/2 | Complete (checkpoint) | 2026-03-03 |
 | 2. Scénario 0 — Biais de petits nombres | 2/2 | Complete | 2026-03-03 |
-| 3. Scénarios 1a/1b/1c — Biais de sélection | 1/2 | In progress (03-01 complete) | - |
+| 3. Scénarios 1a/1b/1c — Biais de sélection | 1/2 | In progress (03-01 refactoring log_rev_int complet) | - |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 0/TBD | Not started | - |
 | 5. Scénario 3 — Surcontrôle sur un collider | 0/TBD | Not started | - |
 | 6. Validation bout-en-bout | 0/TBD | Not started | - |

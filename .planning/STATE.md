@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: "2026-03-04T08:38:00Z"
+last_updated: "2026-03-04T13:15:00Z"
 progress:
   total_phases: 6
   completed_phases: 2
@@ -23,9 +23,9 @@ See: .planning/PROJECT.md (updated 2026-03-02)
 ## Current Position
 
 Phase: 3 of 6 (Scénarios 1a/1b/1c — Biais de sélection)
-Plan: 1 of TBD in current phase (03-01 COMPLETE — 10 cellules insérées, 8 artifacts générés)
-Status: In progress — Plan 03-01 fully complete, ready for plan 03-02 (scénario 1c)
-Last activity: 2026-03-04 — Plan 03-01 complete (scénarios 1a/1b : DAG + coeff + bar, 6 PNG + 2 CSV, commits eb5df4d + 541f6ba)
+Plan: 1 of TBD in current phase (03-01 COMPLETE — refactoring DV ventes→log_rev_int, 10 cellules modifiées, artifacts régénérés)
+Status: In progress — Plan 03-01 refactoring complet, 03-02 à reprendre (sc1c checkpoint pending)
+Last activity: 2026-03-04 — Plan 03-01 refactoring DV log_rev_int pour 1a/1b/1c (EFFET_SAISON recalibré, surestimation validée, commit afee35f)
 
 Progress: [█████░░░░░] 40%
 
@@ -69,6 +69,7 @@ Recent decisions affecting current work:
 - [02-02]: warn_singular=False dans sns.kdeplot obligatoire pour N=100000 (std ≈ 0.018, courbe absente silencieusement sinon)
 - [03-01]: colors_est redéfini dans code-sc1b-coeff (pas dépendant de code-sc1a-bar) — robustesse réexécution partielle
 - [03-01]: Direction biais DGP inversée pour 1a et 1b (OLS naïf sous-estime ATT, non surestime) — EFFET_EQUIPE=0.02 et EFFET_URBAIN=0.03 trop faibles vs variance taille ; décision de recalibration à prendre par le formateur
+- [03-01 REFACTORING]: DV = log(ventes/n_potentiel) — mesure intensive, supprime l'effet de taille, interprétation en log-points ≈ % uplift. EFFET_SAISON max 0.08 (vs 0.02). Surestimation validée: 1a +70%, 1b +55%, 1c +8.6pp (SEED=42)
 
 ### Pending Todos
 
@@ -78,10 +79,10 @@ None yet.
 
 - [Phase 1 - RESOLVED]: Calibration validée empiriquement avec SEED=42 — P_BASE_VISITE=0.25, N_PETIT=30, N_MOYEN=150, N_GRAND=500 : 0 zéros, ratio_variance=4.4x
 - [Phase 5]: alpha_collider pour `posts_reseaux` est non trivial — nécessite des essais pour garantir la visibilité du biais (≥5% de différence)
-- [Phase 3 - OPEN]: Direction du biais pédagogique inversée pour sc1a et sc1b — EFFET_EQUIPE=0.02 et EFFET_URBAIN=0.03 sont trop faibles vs variance taille pour créer une surestimation visible. OLS naïf=837, ATT=1070 pour 1a (sous-estimation, non surestimation). Recalibration DGP requise si la pédagogie doit montrer une surestimation. Décision utilisateur requise avant validation finale.
+- [Phase 3 - RESOLVED]: Direction du biais pédagogique corrigée via refactoring DV log_rev_int + EFFET_EQUIPE/URBAIN=0.20 + EFFET_SAISON max 0.08. OLS naïf > ATT_log confirmé pour 1a (+70%), 1b (+55%), 1c (+8.6pp). Blocker résolu.
 
 ## Session Continuity
 
 Last session: 2026-03-04
-Stopped at: Plan 03-01 COMPLETE — scénarios 1a et 1b insérés (10 cellules), 6 PNG + 2 CSV générés, commits eb5df4d + 541f6ba. Observation critique : direction du biais inversée (voir Blockers).
+Stopped at: Plan 03-01 REFACTORING COMPLETE — DV log_rev_int, 10 cellules modifiées, surestimation validée (commit afee35f). Prochaine étape: plan 03-02 checkpoint human-verify (figures sc1c à valider).
 Resume file: None
