@@ -75,7 +75,10 @@ Plans:
   1. Le DAG causal illustre clairement les deux chemins causaux (`pub → nb_visites → ventes` ET `pub → panier_moyen → ventes`)
   2. Le coefficient plot montre un coefficient `pub` significativement plus faible quand `panier_moyen` est inclus comme contrôle
   3. Le bar chart de comparaison révèle que l'estimation sans contrôle est proche de la valeur vraie, et l'estimation avec médiateur est biaisée vers le bas
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 04-01-PLAN.md — Données + ATT + OLS (sans/avec médiateur) + DAG + coefficient plot + bar chart + CSV export
 
 ### Phase 5: Scénario 3 — Surcontrôle sur un collider
 **Goal**: Le formateur peut montrer que contrôler sur `posts_reseaux` introduit un biais là où l'estimation naïve était correcte, parce que `posts_reseaux` est un collider
@@ -108,6 +111,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 1. Fondations | 2/2 | Complete (checkpoint) | 2026-03-03 |
 | 2. Scénario 0 — Biais de petits nombres | 2/2 | Complete | 2026-03-03 |
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 2/2 | Complete | 2026-03-04 |
-| 4. Scénario 2 — Surcontrôle sur un médiateur | 0/TBD | Not started | - |
+| 4. Scénario 2 — Surcontrôle sur un médiateur | 0/1 | Not started | - |
 | 5. Scénario 3 — Surcontrôle sur un collider | 0/TBD | Not started | - |
 | 6. Validation bout-en-bout | 0/TBD | Not started | - |
