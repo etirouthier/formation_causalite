@@ -31,8 +31,8 @@
 
 ### Scénario 1 — Biais de sélection
 
-- [ ] **SC1-01**: Scénario 1a (sélection par qualité d'équipe) : DAG causal + coefficient plot (OLS naïf vs OLS ajusté vs valeur vraie avec IC 95%) + bar chart comparant effet naïf/ajusté/vrai
-- [ ] **SC1-02**: Scénario 1b (sélection par localisation urbain/rural) : DAG causal + coefficient plot + bar chart comparant effet naïf/ajusté/vrai
+- [x] **SC1-01**: Scénario 1a (sélection par qualité d'équipe) : DAG causal + coefficient plot (OLS naïf vs OLS ajusté vs valeur vraie avec IC 95%) + bar chart comparant effet naïf/ajusté/vrai
+- [x] **SC1-02**: Scénario 1b (sélection par localisation urbain/rural) : DAG causal + coefficient plot + bar chart comparant effet naïf/ajusté/vrai
 - [ ] **SC1-03**: Scénario 1c (sélection par saison) : DAG causal + coefficient plot + bar chart comparant effet naïf/ajusté/vrai
 
 ### Scénario 2 — Surcontrôle sur un médiateur
