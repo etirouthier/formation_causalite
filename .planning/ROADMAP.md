@@ -54,7 +54,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — ventes_par_m2 : calcul + figure par taille (sc0)
+- [x] 08-01-PLAN.md — ventes_par_m2 : calcul + figure par taille (sc0) (completed 2026-03-05)
 - [ ] 08-02-PLAN.md — DAG uniforme : tous les 6 DAG en noir
 
 ## Progress
@@ -68,4 +68,4 @@ Plans:
 | 5. Scénario 3 — Surcontrôle sur un collider | v1.0 | 1/1 | Complete | 2026-03-04 |
 | 6. Validation bout-en-bout | v1.0 | 1/1 | Complete | 2026-03-05 |
 | 7. Scénario Randomisation | v1.1 | 1/1 | Complete | 2026-03-05 |
-| 8. Ventes par m2 et DAG uniforme | v1.1 | 0/2 | Not started | - |
+| 8. Ventes par m2 et DAG uniforme | v1.1 | 1/2 | In progress | - |

@@ -3,11 +3,11 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Formation Causalité
 status: unknown
-last_updated: "2026-03-05T11:37:58.113Z"
+last_updated: "2026-03-05T12:05:30Z"
 progress:
-  total_phases: 1
+  total_phases: 2
   completed_phases: 1
-  total_plans: 1
+  total_plans: 2
   completed_plans: 1
 ---
 
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-05)
 
 **Core value:** Permettre au formateur d'illustrer quatre biais causaux classiques avec des données reproductibles, tous construits sur le même modèle cohérent
-**Current focus:** Milestone v1.1 — Phase 7: Scénario Randomisation
+**Current focus:** Milestone v1.1 — Phase 8: Ventes par m2 et DAG uniforme
 
 ## Current Position
 
-Phase: 7
+Phase: 8
 Plan: 01 (completed)
-Status: Phase 7 plan 01 complete — Scenario 4 Randomisation ajouté au notebook
-Last activity: 2026-03-05 — 07-01 executed: sc4 données + figures balance grand/petit
+Status: Phase 8 plan 01 complete — ventes_par_m2 calcule et figure sc0 produite
+Last activity: 2026-03-05 — 08-01 executed: ventes_par_m2 dans base_panel.csv + figure sc0_ventes_par_m2.png
 
-Progress: [#####-----] 50% (v1.1 — 1/2 phases en cours)
+Progress: [######----] 60% (v1.1 — 1/2 phases completes, phase 8 en cours 1/2 plans)
 
 ## Performance Metrics
 
@@ -41,7 +41,7 @@ Progress: [#####-----] 50% (v1.1 — 1/2 phases en cours)
 | Phase | Plans | Status |
 |-------|-------|--------|
 | 07-scenario-randomisation | 1/1 | Complete |
-| 08-vm2-dag-uniforme | 0/TBD | Not started |
+| 08-vm2-dag-uniforme | 1/2 | In progress |
 
 *Updated after each plan completion*
 
@@ -77,6 +77,8 @@ Recent decisions affecting current work:
 - [07-01]: Grand echantillon = tous les 200 magasins de base_df ; petit = 30 tires sans remise depuis le grand — meme population de base.
 - [07-01]: Helpers locaux balance_table() et plot_balance() — evite repetition code pour les deux tailles d'echantillon.
 - [07-01]: Couleurs steelblue (Temoin) / darkorange (Traite) coherentes avec palette existante des scenarios 1-3.
+- [08-01]: ventes_par_m2 = ventes / n_potentiel calcule dans base_df avant export et dans agg_sc0 apres groupby — mesure intensive independante de la taille.
+- [08-01]: ventes agregees via sum dans agg_sc0 groupby — necessite pour calculer ventes_par_m2 au niveau magasin (etait absent du groupby original).
 
 ### Pending Todos
 
@@ -89,5 +91,5 @@ None at start of v1.1.
 ## Session Continuity
 
 Last session: 2026-03-05
-Stopped at: Completed 07-01-PLAN.md — Scenario 4 Randomisation (donnees + figures balance grand/petit, validation mise a jour)
+Stopped at: Completed 08-01-PLAN.md — ventes_par_m2 (colonne base_panel.csv + figure sc0_ventes_par_m2.png)
 Resume file: None
