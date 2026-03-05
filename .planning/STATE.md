@@ -1,12 +1,12 @@
 ---
 gsd_state_version: 1.0
 milestone: v1.1
-milestone_name: Formation Causalité v1.1
-status: in_progress
-last_updated: "2026-03-05"
+milestone_name: Formation Causalité
+status: unknown
+last_updated: "2026-03-05T11:37:58.113Z"
 progress:
-  total_phases: 2
-  completed_phases: 0
+  total_phases: 1
+  completed_phases: 1
   total_plans: 1
   completed_plans: 1
 ---
