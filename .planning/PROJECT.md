@@ -1,8 +1,11 @@
+
 # Générateur de données — Formation Causalité
 
 ## What This Is
 
-Un notebook Jupyter (Python) destiné au formateur pour générer des données simulées à l'usage d'une formation introductive à l'évaluation des effets causaux. Le fil rouge est l'estimation de l'impact d'une campagne publicitaire sur les ventes d'une chaîne de magasins. Le formateur exécute le notebook pour produire des figures et jeux de données qu'il intègre ensuite dans sa présentation de formation.
+Un notebook Jupyter (Python) standalone qui génère des données simulées illustrant quatre biais causaux classiques (petits nombres, sélection, médiateur, collider), tous construits sur le même modèle de données cohérent. Le formateur exécute `Restart & Run All` pour produire 20 figures PNG et 7 CSV qu'il intègre dans sa présentation.
+
+**Shipped v1.0 :** 42 cellules, ~993 lignes Python, 6 phases, 9 plans. Notebook prêt à distribuer.
 
 ## Core Value
 
@@ -107,18 +110,19 @@ Tous les paramètres sont exposés dans une cellule "Paramètres" en tête de no
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Notebook Python/Jupyter unique avec cellule "Paramètres" en tête — v1.0
+- ✓ Générateur micro-fondé (Binomial × Normal) avec tous paramètres exposés — v1.0
+- ✓ Scénario 0 : biais de petits nombres avec figures (distribution, scatter, top10, loi des grands nombres) — v1.0
+- ✓ Scénarios 1a/1b/1c : biais de sélection (équipe, localisation, saison) avec DAG + figures — v1.0
+- ✓ Scénario 2 : surcontrôle sur médiateur avec visualisation coefficients — v1.0
+- ✓ Scénario 3 : surcontrôle sur collider avec visualisation coefficients — v1.0
+- ✓ Export des figures (PNG) et des données (CSV) dans des dossiers dédiés — v1.0
+- ✓ Seed de reproductibilité paramétrable — v1.0
+- ✓ `Restart & Run All` sans erreur, validation finale par nbconvert — v1.0
 
 ### Active
 
-- [ ] Notebook Python/Jupyter unique avec cellule "Paramètres" en tête
-- [ ] Générateur micro-fondé (Binomial × Normal) avec tous paramètres exposés
-- [ ] Scénario 0 : biais de petits nombres avec figures (distribution, scatter)
-- [ ] Scénarios 1a/1b/1c : biais de sélection (équipe, localisation, saison) avec DAG + figures
-- [ ] Scénario 2 : surcontrôle sur médiateur avec visualisation coefficients
-- [ ] Scénario 3 : surcontrôle sur collider avec visualisation coefficients
-- [ ] Export des figures (PNG) et des données (CSV) dans des dossiers dédiés
-- [ ] Seed de reproductibilité paramétrable
+*(Aucun — planning prochain milestone à définir)*
 
 ### Out of Scope
 
@@ -131,6 +135,8 @@ Tous les paramètres sont exposés dans une cellule "Paramètres" en tête de no
 
 Formation introductive à l'évaluation des effets causaux. Le public est des praticiens data/analytics, pas des chercheurs. Les apprenants n'ont pas accès au notebook — le formateur en tire des figures pour une présentation. L'exemple fil rouge (pub → ventes) est maintenu sur tous les scénarios pour permettre la comparaison des biais entre eux.
 
+**État actuel (v1.0) :** Notebook 42 cellules, ~993 lignes Python, 20 PNG + 7 CSV générés. Tech stack : numpy, pandas, matplotlib, statsmodels, networkx. Exécution complète validée par `nbconvert --execute` (exit 0).
+
 ## Constraints
 
 - **Langage** : Python 3, Jupyter Notebook — bibliothèques standard (numpy, pandas, matplotlib, statsmodels)
@@ -141,10 +147,13 @@ Formation introductive à l'évaluation des effets causaux. Le public est des pr
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Modèle micro-fondé client par client | Crée naturellement le biais de petits nombres via la variance binomiale | — Pending |
-| panier_moyen dépend uniquement de la pub | Simplifie la modélisation du Scénario 2 (médiateur pur) | — Pending |
-| Pas d'effets hétérogènes de la pub | Garde l'accent sur les biais de sélection/contrôle, pas sur l'estimation d'effets individuels | — Pending |
-| Paramètres exposés dans une cellule unique | Permet au formateur de créer facilement des variantes pour exercices | — Pending |
+| Modèle micro-fondé client par client | Crée naturellement le biais de petits nombres via la variance binomiale | ✓ Validé — biais clairement visible en production |
+| panier_moyen dépend uniquement de la pub | Simplifie la modélisation du Scénario 2 (médiateur pur) | ✓ Validé — pédagogiquement clair |
+| Pas d'effets hétérogènes de la pub | Garde l'accent sur les biais de sélection/contrôle, pas sur l'estimation d'effets individuels | ✓ Validé — cohérent avec l'objectif pédagogique |
+| Paramètres exposés dans une cellule unique | Permet au formateur de créer facilement des variantes pour exercices | ✓ Validé — ALL_CAPS, aucun magic number hors PARAMS |
+| DV = log_rev_int pour scénarios 1a/1b/1c | Effets multiplicatifs plus réalistes, ATT en log-points interprétable | ✓ Validé — biais de sélection visible et calibré |
+| P_PUB_ALEATOIRE pour sc2/sc3 | Sélection aléatoire dans sc2/sc3 évite le biais de sélection — met en évidence le biais de contrôle seul | ✓ Validé — contrôle propre dans v1.0 |
+| Collider COLLIDER_PUB_VENTES_COEFF ajustable | SNR suffisant pour biais visible (A=5, B=2, ~9pp de biais) | ✓ Validé — pédagogiquement lisible |
 
 ---
-*Last updated: 2026-03-02 after initialization*
+*Last updated: 2026-03-05 after v1.0 milestone*
