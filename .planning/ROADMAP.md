@@ -37,7 +37,10 @@ Full archive: `.planning/milestones/v1.0-ROADMAP.md`
   2. Dans le cas grand échantillon, les distributions des caractéristiques sont visuellement équilibrées entre les deux groupes
   3. Dans le cas petit échantillon, des déséquilibres apparents sont visibles — sans confondant, par hasard seul
   4. Les données du scénario sont exportées en CSV dans `data/` et les figures en PNG dans `figures/`
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 07-01-PLAN.md — Scenario 4 Randomisation : donnees + figures balance grand vs petit echantillon
 
 ### Phase 8: Ventes par m2 et DAG uniforme
 **Goal**: Le notebook intègre la variable dérivée ventes_par_m2 avec au moins une figure illustrative, et tous les DAG utilisent exclusivement le noir
@@ -60,5 +63,5 @@ Full archive: `.planning/milestones/v1.0-ROADMAP.md`
 | 4. Scénario 2 — Surcontrôle sur un médiateur | v1.0 | 1/1 | Complete | 2026-03-04 |
 | 5. Scénario 3 — Surcontrôle sur un collider | v1.0 | 1/1 | Complete | 2026-03-04 |
 | 6. Validation bout-en-bout | v1.0 | 1/1 | Complete | 2026-03-05 |
-| 7. Scénario Randomisation | v1.1 | 0/TBD | Not started | - |
+| 7. Scénario Randomisation | v1.1 | 0/1 | Planned | - |
 | 8. Ventes par m2 et DAG uniforme | v1.1 | 0/TBD | Not started | - |
