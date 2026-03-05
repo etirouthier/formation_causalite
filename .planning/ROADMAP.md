@@ -51,7 +51,11 @@ Plans:
   2. Au moins une figure représente `ventes_par_m2` par taille, localisation, ou traitement pub
   3. Tous les DAG du notebook (scénarios 1a, 1b, 1c, 2, 3) ont nœuds, arêtes et labels en noir — aucune couleur
   4. `Restart & Run All` produit toutes les figures et CSV sans erreur après ces modifications
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 08-01-PLAN.md — ventes_par_m2 : calcul + figure par taille (sc0)
+- [ ] 08-02-PLAN.md — DAG uniforme : tous les 6 DAG en noir
 
 ## Progress
 
@@ -64,4 +68,4 @@ Plans:
 | 5. Scénario 3 — Surcontrôle sur un collider | v1.0 | 1/1 | Complete | 2026-03-04 |
 | 6. Validation bout-en-bout | v1.0 | 1/1 | Complete | 2026-03-05 |
 | 7. Scénario Randomisation | v1.1 | 1/1 | Complete | 2026-03-05 |
-| 8. Ventes par m2 et DAG uniforme | v1.1 | 0/TBD | Not started | - |
+| 8. Ventes par m2 et DAG uniforme | v1.1 | 0/2 | Not started | - |
