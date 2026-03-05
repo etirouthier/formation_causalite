@@ -1,8 +1,8 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: unknown
+milestone: v1.1
+milestone_name: Formation Causalité v1.1
+status: planning
 last_updated: "2026-03-05T10:33:48.919Z"
 progress:
   total_phases: 6
@@ -15,17 +15,17 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-02)
+See: .planning/PROJECT.md (updated 2026-03-05)
 
 **Core value:** Permettre au formateur d'illustrer quatre biais causaux classiques avec des données reproductibles, tous construits sur le même modèle cohérent
-**Current focus:** Phase 6 — Validation bout-en-bout — COMPLETE
+**Current focus:** Milestone v1.1 — Defining requirements
 
 ## Current Position
 
-Phase: 6 of 6 (Validation bout-en-bout — COMPLETE)
-Plan: 1 of 1 in current phase (Phase 6 COMPLETE — P_PUB_ALEATOIRE dans PARAMS, cellule validation finale, nbconvert exit 0)
-Status: ALL PHASES COMPLETE — Notebook prêt à distribuer
-Last activity: 2026-03-05 — Plan 06-01 COMPLETE — notebook finalisé, 42 cellules, validation bout-en-bout OK
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-05 — Milestone v1.1 started
 
 Progress: [██████████] 100%
 

@@ -120,9 +120,11 @@ Tous les paramètres sont exposés dans une cellule "Paramètres" en tête de no
 - ✓ Seed de reproductibilité paramétrable — v1.0
 - ✓ `Restart & Run All` sans erreur, validation finale par nbconvert — v1.0
 
-### Active
+### Active (v1.1)
 
-*(Aucun — planning prochain milestone à définir)*
+- [ ] Scénario randomisation : balance grand échantillon vs petit échantillon (RAND-01 à RAND-04)
+- [ ] Variable `ventes_par_m2` et visualisation (VM2-01, VM2-02)
+- [ ] DAG en noir uniquement sur tous les scénarios (DAG-01)
 
 ### Out of Scope
 
@@ -156,4 +158,4 @@ Formation introductive à l'évaluation des effets causaux. Le public est des pr
 | Collider COLLIDER_PUB_VENTES_COEFF ajustable | SNR suffisant pour biais visible (A=5, B=2, ~9pp de biais) | ✓ Validé — pédagogiquement lisible |
 
 ---
-*Last updated: 2026-03-05 after v1.0 milestone*
+*Last updated: 2026-03-05 after v1.1 milestone start*
