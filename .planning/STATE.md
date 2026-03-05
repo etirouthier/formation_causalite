@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Formation Causalité v1.1
-status: planning
+status: in_progress
 last_updated: "2026-03-05"
 progress:
   total_phases: 2
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 1
+  completed_plans: 1
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 
 ## Current Position
 
-Phase: 7 (not started)
-Plan: —
-Status: Roadmap defined, ready to plan Phase 7
-Last activity: 2026-03-05 — Roadmap v1.1 created (phases 7–8)
+Phase: 7
+Plan: 01 (completed)
+Status: Phase 7 plan 01 complete — Scenario 4 Randomisation ajouté au notebook
+Last activity: 2026-03-05 — 07-01 executed: sc4 données + figures balance grand/petit
 
-Progress: [----------] 0% (v1.1)
+Progress: [#####-----] 50% (v1.1 — 1/2 phases en cours)
 
 ## Performance Metrics
 
@@ -40,7 +40,7 @@ Progress: [----------] 0% (v1.1)
 
 | Phase | Plans | Status |
 |-------|-------|--------|
-| 07-scenario-randomisation | 0/TBD | Not started |
+| 07-scenario-randomisation | 1/1 | Complete |
 | 08-vm2-dag-uniforme | 0/TBD | Not started |
 
 *Updated after each plan completion*
@@ -73,6 +73,10 @@ Recent decisions affecting current work:
 - [05-01]: Couleur collider = crimson (rouge) pour distinction visuelle forte vs médiateur (bleu sc2). DAG inclut Pub→Ventes pour structure causale complète.
 - [05-01]: Biais direction downward (naive 33.6% > avec-collider 30.5%) — 9.4% relatif. Proximité fortuite ATT (30.2%) ≈ avec-collider commentée explicitement.
 - [06-01]: Notebook avait 41 cellules (pas 31 comme supposé dans le plan) — cellule validation ajoutée en 42e position. P_PUB_ALEATOIRE supprime les deux derniers magic numbers 0.5 dans sc2/sc3.
+- [07-01]: SEED+70 pour rng_sc4 — convention +10*phase maintenue (phase=7), isole le rng sc4 du reste.
+- [07-01]: Grand echantillon = tous les 200 magasins de base_df ; petit = 30 tires sans remise depuis le grand — meme population de base.
+- [07-01]: Helpers locaux balance_table() et plot_balance() — evite repetition code pour les deux tailles d'echantillon.
+- [07-01]: Couleurs steelblue (Temoin) / darkorange (Traite) coherentes avec palette existante des scenarios 1-3.
 
 ### Pending Todos
 
@@ -85,5 +89,5 @@ None at start of v1.1.
 ## Session Continuity
 
 Last session: 2026-03-05
-Stopped at: Roadmap v1.1 created — phases 7 (Scénario Randomisation) and 8 (Ventes par m2 et DAG uniforme) defined.
+Stopped at: Completed 07-01-PLAN.md — Scenario 4 Randomisation (donnees + figures balance grand/petit, validation mise a jour)
 Resume file: None
