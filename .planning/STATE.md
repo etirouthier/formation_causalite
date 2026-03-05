@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: "2026-03-04T14:00:00Z"
+last_updated: "2026-03-05T10:23:05Z"
 progress:
   total_phases: 6
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 9
-  completed_plans: 8
+  completed_plans: 9
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-02)
 
 **Core value:** Permettre au formateur d'illustrer quatre biais causaux classiques avec des données reproductibles, tous construits sur le même modèle cohérent
-**Current focus:** Phase 5 — Scénario 3 — Surcontrôle sur un collider
+**Current focus:** Phase 6 — Validation bout-en-bout — COMPLETE
 
 ## Current Position
 
-Phase: 5 of 6 (Scénario 3 — Surcontrôle sur un collider)
-Plan: 1 of 1 in current phase (Phase 5 COMPLETE — scénario 3 collider, 3 PNG + 1 CSV, biais collider validé)
-Status: Phase 5 complete — ready to start Phase 6
-Last activity: 2026-03-04 — Plan 05-01 COMPLETE — scénario 3 validé, OLS naïf 33.6% > OLS avec collider 30.5% (-3.1pp, 9.4%)
+Phase: 6 of 6 (Validation bout-en-bout — COMPLETE)
+Plan: 1 of 1 in current phase (Phase 6 COMPLETE — P_PUB_ALEATOIRE dans PARAMS, cellule validation finale, nbconvert exit 0)
+Status: ALL PHASES COMPLETE — Notebook prêt à distribuer
+Last activity: 2026-03-05 — Plan 06-01 COMPLETE — notebook finalisé, 42 cellules, validation bout-en-bout OK
 
-Progress: [████████░░] 80%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -77,6 +77,7 @@ Recent decisions affecting current work:
 - [05-01]: OLS naïf (sans collider) est le modèle CORRECT en sc3 — assignation aléatoire, même inversion pédagogique qu'en Phase 4.
 - [05-01]: Couleur collider = crimson (rouge) pour distinction visuelle forte vs médiateur (bleu sc2). DAG inclut Pub→Ventes pour structure causale complète.
 - [05-01]: Biais direction downward (naive 33.6% > avec-collider 30.5%) — 9.4% relatif. Proximité fortuite ATT (30.2%) ≈ avec-collider commentée explicitement.
+- [06-01]: Notebook avait 41 cellules (pas 31 comme supposé dans le plan) — cellule validation ajoutée en 42e position. P_PUB_ALEATOIRE supprime les deux derniers magic numbers 0.5 dans sc2/sc3.
 
 ### Pending Todos
 
@@ -90,6 +91,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04
-Stopped at: Plan 05-01 COMPLETE — Phase 5 entière validée. Scénario 3: OLS naïf 33.6% > OLS avec collider 30.5% (-3.1pp, 9.4%). 3 PNG + 1 CSV produits. nbconvert exit 0. Prochaine étape: Phase 6 — Validation bout-en-bout.
+Last session: 2026-03-05
+Stopped at: Plan 06-01 COMPLETE — Phase 6 entière validée. Notebook 42 cellules finalisé : P_PUB_ALEATOIRE dans PARAMS, cellule validation finale (20 PNG + 7 CSV + cohérence effets), nbconvert exit 0. TOUTES LES PHASES COMPLÈTES.
 Resume file: None

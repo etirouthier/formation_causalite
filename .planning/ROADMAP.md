@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Scénarios 1a/1b/1c — Biais de sélection** - DAGs networkx, comparaisons naïf vs ajusté avec IC 95%, exports
 - [x] **Phase 4: Scénario 2 — Surcontrôle sur un médiateur** - Visualisation du changement de coefficient OLS lors de l'ajout du médiateur
 - [ ] **Phase 5: Scénario 3 — Surcontrôle sur un collider** - Variable `posts_reseaux` comme collider, comparaison OLS avec vs sans collider
-- [ ] **Phase 6: Validation bout-en-bout** - Notebook propre, `Restart & Run All` sans erreur, zero magic number hors cellule Paramètres
+- [x] **Phase 6: Validation bout-en-bout** - Notebook propre, `Restart & Run All` sans erreur, zero magic number hors cellule Paramètres
 
 ## Phase Details
 
@@ -105,7 +105,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 06-01-PLAN.md — P_PUB_ALEATOIRE dans PARAMS + correction sc2/sc3 + cellule validation finale + nbconvert exit 0
+- [x] 06-01-PLAN.md — P_PUB_ALEATOIRE dans PARAMS + correction sc2/sc3 + cellule validation finale + nbconvert exit 0
 
 ## Progress
 
@@ -119,4 +119,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 3. Scénarios 1a/1b/1c — Biais de sélection | 2/2 | Complete | 2026-03-04 |
 | 4. Scénario 2 — Surcontrôle sur un médiateur | 1/1 | Complete | 2026-03-04 |
 | 5. Scénario 3 — Surcontrôle sur un collider | 1/1 | Complete | 2026-03-04 |
-| 6. Validation bout-en-bout | 0/1 | Not started | - |
+| 6. Validation bout-en-bout | 1/1 | Complete | 2026-03-05 |
