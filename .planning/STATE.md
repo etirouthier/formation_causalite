@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Formation Causalité v1.1
 status: planning
-last_updated: "2026-03-05T10:33:48.919Z"
+last_updated: "2026-03-05"
 progress:
-  total_phases: 6
-  completed_phases: 6
-  total_plans: 9
-  completed_plans: 9
+  total_phases: 2
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Project State
@@ -18,35 +18,30 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-05)
 
 **Core value:** Permettre au formateur d'illustrer quatre biais causaux classiques avec des données reproductibles, tous construits sur le même modèle cohérent
-**Current focus:** Milestone v1.1 — Defining requirements
+**Current focus:** Milestone v1.1 — Phase 7: Scénario Randomisation
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 7 (not started)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-03-05 — Milestone v1.1 started
+Status: Roadmap defined, ready to plan Phase 7
+Last activity: 2026-03-05 — Roadmap v1.1 created (phases 7–8)
 
-Progress: [██████████] 100%
+Progress: [----------] 0% (v1.1)
 
 ## Performance Metrics
 
-**Velocity:**
-- Total plans completed: 4
-- Average duration: 5 min
-- Total execution time: 20 min
+**Velocity (v1.0 reference):**
+- Total plans completed: 9
+- Average duration: ~5 min/plan
+- Total execution time: ~45 min
 
-**By Phase:**
+**v1.1 Phases:**
 
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 01-fondations | 2/2 | 10 min | 5 min |
-| 02-scenario0-petits-nombres | 2/TBD | 10 min | 5 min |
-| 03-sc-narios-1a-1b-1c-biais-de-s-lection | 1/TBD | 15 min | 15 min |
-
-**Recent Trend:**
-- Last 5 plans: 3 min, 7 min, 5 min
-- Trend: stable
+| Phase | Plans | Status |
+|-------|-------|--------|
+| 07-scenario-randomisation | 0/TBD | Not started |
+| 08-vm2-dag-uniforme | 0/TBD | Not started |
 
 *Updated after each plan completion*
 
@@ -85,12 +80,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- [Phase 1 - RESOLVED]: Calibration validée empiriquement avec SEED=42 — P_BASE_VISITE=0.25, N_PETIT=30, N_MOYEN=150, N_GRAND=500 : 0 zéros, ratio_variance=4.4x
-- [Phase 5 - RESOLVED]: alpha_collider = 5e-5 — biais 9.4% relatif (> seuil 5%). 113/200 traités. nbconvert exit 0.
-- [Phase 3 - RESOLVED]: Direction du biais pédagogique corrigée via refactoring DV log_rev_int + EFFET_EQUIPE/URBAIN=0.20 + EFFET_SAISON max 0.08. OLS naïf > ATT_log confirmé pour 1a (+70%), 1b (+55%), 1c (+8.6pp). Blocker résolu.
+None at start of v1.1.
 
 ## Session Continuity
 
 Last session: 2026-03-05
-Stopped at: Plan 06-01 COMPLETE — Phase 6 entière validée. Notebook 42 cellules finalisé : P_PUB_ALEATOIRE dans PARAMS, cellule validation finale (20 PNG + 7 CSV + cohérence effets), nbconvert exit 0. TOUTES LES PHASES COMPLÈTES.
+Stopped at: Roadmap v1.1 created — phases 7 (Scénario Randomisation) and 8 (Ventes par m2 et DAG uniforme) defined.
 Resume file: None
