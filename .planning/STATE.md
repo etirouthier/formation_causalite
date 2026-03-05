@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Formation Causalité
 status: unknown
-last_updated: "2026-03-05T12:05:30Z"
+last_updated: "2026-03-05T13:00:00Z"
 progress:
   total_phases: 2
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 ## Current Position
 
 Phase: 8
-Plan: 01 (completed)
-Status: Phase 8 plan 01 complete — ventes_par_m2 calcule et figure sc0 produite
-Last activity: 2026-03-05 — 08-01 executed: ventes_par_m2 dans base_panel.csv + figure sc0_ventes_par_m2.png
+Plan: 02 (completed)
+Status: Phase 8 complete — DAG uniformes en noir, milestone v1.1 complete
+Last activity: 2026-03-05 — 08-02 executed: 6 cellules DAG uniformisées en noir, notebook s'execute sans erreur
 
-Progress: [######----] 60% (v1.1 — 1/2 phases completes, phase 8 en cours 1/2 plans)
+Progress: [##########] 100% (v1.1 — 2/2 phases completes, phase 8 2/2 plans)
 
 ## Performance Metrics
 
@@ -41,7 +41,7 @@ Progress: [######----] 60% (v1.1 — 1/2 phases completes, phase 8 en cours 1/2 
 | Phase | Plans | Status |
 |-------|-------|--------|
 | 07-scenario-randomisation | 1/1 | Complete |
-| 08-vm2-dag-uniforme | 1/2 | In progress |
+| 08-vm2-dag-uniforme | 2/2 | Complete |
 
 *Updated after each plan completion*
 
@@ -79,6 +79,7 @@ Recent decisions affecting current work:
 - [07-01]: Couleurs steelblue (Temoin) / darkorange (Traite) coherentes avec palette existante des scenarios 1-3.
 - [08-01]: ventes_par_m2 = ventes / n_potentiel calcule dans base_df avant export et dans agg_sc0 apres groupby — mesure intensive independante de la taille.
 - [08-01]: ventes agregees via sum dans agg_sc0 groupby — necessite pour calculer ventes_par_m2 au niveau magasin (etait absent du groupby original).
+- [08-02]: node_color='black' uniforme dans tous les DAG — suppression des color_map (steelblue/seagreen/darkorange/crimson/mediumpurple) dans les 6 cellules nx.draw_networkx().
 
 ### Pending Todos
 
@@ -91,5 +92,5 @@ None at start of v1.1.
 ## Session Continuity
 
 Last session: 2026-03-05
-Stopped at: Completed 08-01-PLAN.md — ventes_par_m2 (colonne base_panel.csv + figure sc0_ventes_par_m2.png)
+Stopped at: Completed 08-02-PLAN.md — DAG uniformes en noir (6 cellules, 6 figures PNG)
 Resume file: None

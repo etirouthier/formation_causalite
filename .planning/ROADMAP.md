@@ -24,7 +24,7 @@ Full archive: `.planning/milestones/v1.0-ROADMAP.md`
 ### v1.1 Formation Causalité
 
 - [x] **Phase 7: Scénario Randomisation** — Nouveau scénario illustrant la balance des groupes en grand vs petit échantillon (completed 2026-03-05)
-- [ ] **Phase 8: Ventes par m2 et DAG uniforme** — Variable dérivée ventes_par_m2 avec visualisation + DAG en noir sur tous les scénarios
+- [x] **Phase 8: Ventes par m2 et DAG uniforme** — Variable dérivée ventes_par_m2 avec visualisation + DAG en noir sur tous les scénarios (completed 2026-03-05)
 
 ## Phase Details
 
@@ -55,7 +55,7 @@ Plans:
 
 Plans:
 - [x] 08-01-PLAN.md — ventes_par_m2 : calcul + figure par taille (sc0) (completed 2026-03-05)
-- [ ] 08-02-PLAN.md — DAG uniforme : tous les 6 DAG en noir
+- [x] 08-02-PLAN.md — DAG uniforme : tous les 6 DAG en noir (completed 2026-03-05)
 
 ## Progress
 
@@ -68,4 +68,4 @@ Plans:
 | 5. Scénario 3 — Surcontrôle sur un collider | v1.0 | 1/1 | Complete | 2026-03-04 |
 | 6. Validation bout-en-bout | v1.0 | 1/1 | Complete | 2026-03-05 |
 | 7. Scénario Randomisation | v1.1 | 1/1 | Complete | 2026-03-05 |
-| 8. Ventes par m2 et DAG uniforme | v1.1 | 1/2 | In progress | - |
+| 8. Ventes par m2 et DAG uniforme | v1.1 | 2/2 | Complete | 2026-03-05 |
